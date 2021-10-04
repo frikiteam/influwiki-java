@@ -1,0 +1,104 @@
+/* display: flex es para que no salte de renglon*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+img{
+    height: 70px;
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 0, 0, 15px, 0;
+
+}
+body{
+    background: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    background-attachment: fixed;
+
+}
+#menu ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+#menu li a{    
+    display: block;
+    width: 200px;
+    height: 50px;
+    background-color: rgba(63, 243, 26, 0.781);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(2, 102, 44, 0.712);
+    color: rgb(0, 0, 0);
+    margin: 0px 20px 30px 0px;
+    text-align: center;
+    text-decoration: none;
+    /* padding-top es para espaciar o centrar desde arriba, tambien lo puedo hacer manual 
+    empesando arriba y en orden de las manecillas del reloj con padding y los 4 valores 
+    arriba derecha abajo izquierda ejemplo;0px 20px 30px 0px;*/
+    padding-top: 15px;
+    
+}
+
+#menu a:hover{
+    background-color: rgb(64, 172, 105);
+}
+.formulario{
+    text-align: left;
+    text-decoration: none;
+    width: 50%;
+    /*background-color: white;*/
+    padding: 20px;
+}
+.diseño_label1{
+    display:inline-block;
+    width: 30%;
+    
+}
+.diseño_input1{
+    display: inline-block;
+    width: 50%;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.diseño_input_area{    
+    display: inline-block;
+    width: 50%;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    outline: none;   
+}
+.boton_formulario1{
+    width: 30%;
+    height: 35px;
+    background-color: #81C91D;
+    color:rgb(0, 0, 0);
+    border-color: rgba(2, 102, 44, 0.712);
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+
+}
+a{
+	color: black;
+	text-decoration: none;
+}
+/* .boton_formulario1:hover{background-color: me cambia el color cuando paso el puntero por el boton*/
+.boton_formulario1:hover{
+    background-color:  #5d8622;
+    /* cursor:pointer me convierte el puntero en manito cuando paso por el boton*/
+    cursor:pointer;
+}
+.formulario{
+    background: rgba(227, 199, 247, 0.37);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 11px );
+    -webkit-backdrop-filter: blur( 11px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}

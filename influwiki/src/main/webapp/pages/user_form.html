@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user_form</title>
+     <!-- aqui vamos a colocar y llamar el estilo, de lo echo en css-->
+     <link rel="stylesheet" href="../css/user_form.css">
+     
+</head>
+<body>
+    <!-- aqui vamos a colocar un logo y un menu, para eso es nav y ul-->    
+    <header>
+        <center>
+            <!-- crear hipervinculos para mi logo sin cerrar mi pagina inicial-->
+            <a href="index.html" title="ir a la pagina principal "target="_blank"> 
+            <a href="Password_assignment_form.html" title="ir a otra pagina "target="_blank">    
+            <!-- crear logo de pagina, y si no carga el nombre con alt sale el nombre de la empresa-->
+            <img src="../img/Influwiki_Logo.png" alt="otra" ></img>
+            </a></a>
+        </center>
+        <!-- declarar el menu-->
+        <!-- <nav id="menu">            
+            <!-- crear lista
+            <ul>
+                <!-- crear libros de una lista
+                <li><a href="Anterior.html">Anterior</a></li>
+                <!-- crear hipervinculos con pag interna o index
+                <li><a href="principal.html">Principal</a></li>
+                 <!-- crear hipervinculos con pag externa
+                <li><a href="Siguiente.html">Siguiente</a></li>
+            </ul>
+        </nav> -->
+    </header>
+    <main>
+        <div class="divFormulario"></div>
+        <center>
+            
+            
+            <!-- Form es para que funcione bien el formulario agrupa todo lo del formulario y tome todos los datos de este como un emboltorio-->
+            <form class="formulario">
+                <h1>Formulario de Registro</h1>
+                <!-- label es para especie de variable titulo-->
+                <label class="diseño_label1" for="nombre"> Nombres: </label>
+                <!-- imput ingresar la informacion, maxlength cantidad de caracteres y size tamaño del espacio-->
+                <!-- imput es de los unicos que no necesita cerrarse-->
+                <input class="diseño_input1" type="text" id="nombre" name="txtNombre" maxlength= "30" size = "30" placeholder="Ingresa aqui tu nombre">
+                <br /><br />
+                <label class="diseño_label1" for="apellido"> Apellidos: </label>
+                <!-- imput ingresar la informacion, maxlength cantidad de caracteres y size tamaño del espacio-->
+                <!-- imput es de los unicos que no necesita cerrarse-->
+                <input class="diseño_input1" type="text" id="Apellido" name="txtApellido" maxlength= "30" size = "30" placeholder="Ingresa aqui tu apellido">
+                <br /><br />
+                <!-- for y id son para conectar el label con el input, asi al darle click en el label me lleva al input para escrivir-->
+                <label class="diseño_label1" for="correo"> Correo: </label>
+                <input class="diseño_input1" type="email" id="correo" name="txtCorreo" size="40" placeholder="Ingresa aqui tu correo">
+                <br /><br />
+                <!-- los siguientes son los radio button-->
+                <label class="diseño_label1">Genero:</label>
+                <label>Masculino:</label><input type="radio" name="genero" value="Masculino">
+                <label>Femenino:</label><input type="radio" name="genero" value="Femenino">
+                <br /><br />
+                <label class="diseño_label1">Perfil:</label>
+                <label>Influwiki:</label><input type="radio" name="perfil" value="Influwiki" checked>
+                <!--<label>Wikiusuario:</label><input type="radio" name="perfil" value="Wikiusuario">-->
+                <br /><br />
+                <!--<h3>Si eres  Wikiusuario</h3>
+                los siguientes son los cheks
+                <label class="diseño_label1">Señala las areas de intres:</label>
+                <label>Programacion:</label>
+                cheked es para mantener la opcion seleccionada por defecto
+                <input type="checkbox" name="materias" checked>
+                <label>Farandula:</label>
+                <input type="checkbox" name="materias" >
+                <label>Otra:</label>
+                <input type="checkbox" name="materias" >
+                <br /><br />  
+                <label class="diseño_label1"> Otra: </label>
+                placeholder es para en la caja de texto nos aparesca lo que debemos escribir en ves del label
+                <input class="diseño_input1" type="text" name="txtOtro" min="1" max="120" size="10" placeholder="Cual Otra">
+                <br /><br />
+                <h3>Influwiki</h3>-->
+                <label class="diseño_label1">Contenido a compartir:</label>
+                <label>Programacion:</label>
+                <!-- cheked es para mantener la opcion seleccionada por defecto-->
+                <input type="checkbox" name="materias" checked>
+                <label>Farandula:</label>
+                <input type="checkbox" name="materias" >
+                <label>Otra:</label>
+                <input type="checkbox" name="materias" >
+                <br /><br />  
+                <label class="diseño_label1"> Otra: </label>
+                <!-- placeholder es para en la caja de texto nos aparesca lo que debemos escribir en ves del label-->
+                <input class="diseño_input1" type="text" name="txtOtro" min="1" max="120" size="10" placeholder="Cual Otra">
+                <br /><br />
+                <label class="diseño_label1"> Descripcion General:</label>
+                <textarea class="diseño_input_area" type="text" rows="3" cols="20">                    
+                </textarea>
+                <br /><br />   
+                <label class="diseño_label1"> <a href="terms_form.html" target="_blank">Acepta terminos y condiciones</a> </label>
+                <input type="checkbox" name="Terminos" >               
+                <br /><br /> 
+                <center>
+                <!-- Este imput es de tipo boton y &nbsp es para espacios-->
+                <div class="botones_formulario">
+                <button class="boton_formulario1" type="submit" > Guardar </button>
+                <button class="boton_formulario1" type="submit" > <a href="login_form.html">Iniciar sesión</a></button>
+                </div>
+                </center>
+            </form>
+        </center>
+        </div>    
+    </main>
+</body>
+</html>

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+img{
+    height: 70px;
+}
+body{
+    background: rgba(227, 199, 247, 0.37);
+    font-family: 'Roboto', sans-serif;
+    background-attachment: fixed;
+}
+
+.caja_g{
+    width: 50%;
+    height: 210px;
+    border-style: inset;
+    border-color: rgb(19, 1, 1);
+    display: inline-block;
+    padding: 10px;
+    
+}
+.caja_n{
+    width: 99%;
+    height: 59px;    
+    display: flex; 
+    justify-content:flex-start;
+    align-items: center;
+    background-color: rgba(174, 255, 178, 0.486); 
+}
+.caja_n img{
+    border-radius: 50%;
+    height: 50px;
+    margin-right: 20px;
+    
+}
+
+.caja_a{
+    width: 99%;
+    height: 100px;
+    background-color: rgba(158, 248, 155, 0.425);   
+}
+
+.caja_r{
+    width: 99%;
+    height: 19px;
+    align-items: left;
+    text-align: right;
+}
+
+.diseño_boton{
+    width: 20%;
+    height: 35px;    
+    margin: 5px;
+    background-color: #81C91D;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(2, 102, 44, 0.712);
+    border-radius: 5px;
+.diseño_boton:hover{
+    background-color: rgb(64, 172, 105);
+    cursor:pointer;
+}
