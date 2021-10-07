@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8"></meta>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+	<title>Formulario de registro</title>
+	<link rel="stylesheet" href="../css/user_form.css"></link>
+</h:head>
+<h:body>
+
+	<header>
+	<center>
+		<a href="index.html" title="ir a la pagina principal " target="_blank">
+			<a href="Password_assignment_form.html" title="ir a otra pagina "
+			target="_blank"> <img src="../img/Influwiki_Logo.png" alt="otra"></img>
+		</a>
+		</a>
+	</center>
+	</header>
+
+	<div class="divFormulario">
+		<center>
+		<!-- cambiar a h:form-->
+			<form class="formulario">
+				<h1>Formulario de Registro</h1>
+
+				<label class="diseño_label1" for="nombre"> Nombres: </label>
+
+				<h:inputTex class="diseño_h:inputTex1" type="text" id="nombre"
+					name="txtNombre" maxlength="30" size="30"
+					placeholder="Ingresa aqui tu nombre"></h:inputTex>
+				<br />
+				<br />
+				<label class="diseño_label1" for="apellido"> Apellidos: </label>
+				<h:inputTex class="diseño_h:inputTex1" type="text" id="Apellido"
+					name="txtApellido" maxlength="30" size="30"
+					placeholder="Ingresa aqui tu apellido"></h:inputTex>
+				<br />
+				<br />
+
+				<label class="diseño_label1" for="correo"> Correo: </label>
+				<h:inputTex class="diseño_h:inputTex1" type="email" id="correo"
+					name="txtCorreo" size="40" placeholder="Ingresa aqui tu correo"></h:inputTex>
+				<br />
+				<br />
+				
+				<label class="diseño_label1">Genero:</label>
+
+
+				<h:selectOneRadio name="genero">
+					<f:selectItem itemValue="Masculino" itemLabel="genero"></f:selectItem>
+				</h:selectOneRadio>
+				<br />
+				<br />
+				<label class="diseño_label1">Perfil:</label>
+
+				<h:selectOneRadio>
+					<f:selectItem itemValue="Influwiki" itemLabel="perfil"></f:selectItem>
+				</h:selectOneRadio>
+
+				<br />
+				<br />
+				<label class="diseño_label1">Contenido a compartir:</label>
+
+				<h:selectManyCheckbox value="">
+					<f:selectItem itemValue="opcionUno" itemLabel="Programacion">
+					</f:selectItem>
+					<f:selectItem itemValue="opcionDos" itemLabel="Diseño"></f:selectItem>
+					<f:selectItem itemValue="opcionTres" itemLabel="Otra"></f:selectItem>
+				</h:selectManyCheckbox>
+				<br />
+				<br />
+				<label class="diseño_label1"> Descripcion General:</label>
+				<h:inputTextarea class="diseño_h:inputTex_area"
+					value="Cuestanos mas acerca de ti" rows="3" cols="20">
+				</h:inputTextarea>
+				<br />
+				<br />
+				<label class="diseño_label1"> <a href="terms_form.html"
+					target="_blank">Acepta terminos y condiciones</a>
+				</label>
+				<h:selectBooleanCheckbox>
+					<f:selectItem itemValue="terminos"
+						itemLabel="Terminos y Condiciones"></f:selectItem>
+				</h:selectBooleanCheckbox>
+
+				<br />
+				<br />
+				<center>
+
+					<div class="botones_formulario">
+						<h:commandButton class="boton_formulario1" type="submit"
+							value="guardar">Guardar </h:commandButton>
+						<h:commandButton class="boton_formulario1" type="submit"
+							value="iniciarSesion">
+							<a href="login_form.html">Iniciar sesión</a>
+						</h:commandButton>
+					</div>
+				</center>
+			</form>
+		</center>
+	</div>
+</h:body>
+</html>
