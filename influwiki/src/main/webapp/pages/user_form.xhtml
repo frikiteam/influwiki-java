@@ -13,7 +13,8 @@
 </h:head>
 <h:body>
 
-	<header>
+
+	<h:header>
 	<center>
 		<a href="index.html" title="ir a la pagina principal " target="_blank">
 			<a href="Password_assignment_form.html" title="ir a otra pagina "
@@ -21,35 +22,30 @@
 		</a>
 		</a>
 	</center>
-	</header>
+	</h:header>
 
 	<div class="divFormulario">
 		<center>
-		<!-- cambiar a h:form-->
-			<form class="formulario">
+			<div id="formulario" class="formulario">
+			<h:form>
 				<h1>Formulario de Registro</h1>
 
-				<label class="diseño_label1" for="nombre"> Nombres: </label>
+				<label class="diseno_label1" for="nombre"> Nombres: </label>
 
-				<h:inputTex class="diseño_h:inputTex1" type="text" id="nombre"
-					name="txtNombre" maxlength="30" size="30"
-					placeholder="Ingresa aqui tu nombre"></h:inputTex>
+				<h:inputTex class="diseno_inputTex1" id="nombre"></h:inputTex>
 				<br />
 				<br />
-				<label class="diseño_label1" for="apellido"> Apellidos: </label>
-				<h:inputTex class="diseño_h:inputTex1" type="text" id="Apellido"
-					name="txtApellido" maxlength="30" size="30"
-					placeholder="Ingresa aqui tu apellido"></h:inputTex>
+				<label class="diseno_label1" for="apellido"> Apellidos: </label>
+				<h:inputTex class="diseno_inputTex1" id="Apellido"></h:inputTex>
 				<br />
 				<br />
 
-				<label class="diseño_label1" for="correo"> Correo: </label>
-				<h:inputTex class="diseño_h:inputTex1" type="email" id="correo"
-					name="txtCorreo" size="40" placeholder="Ingresa aqui tu correo"></h:inputTex>
+				<label class="diseno_label1" for="correo"> Correo: </label>
+				<h:inputTex class="diseno_inputTex1" id="correo"></h:inputTex>
 				<br />
 				<br />
 				
-				<label class="diseño_label1">Genero:</label>
+				<label class="diseno_label1">Genero:</label>
 
 
 				<h:selectOneRadio name="genero">
@@ -57,15 +53,14 @@
 				</h:selectOneRadio>
 				<br />
 				<br />
-				<label class="diseño_label1">Perfil:</label>
-
+				<label class="diseno_label1">Perfil:</label>
 				<h:selectOneRadio>
 					<f:selectItem itemValue="Influwiki" itemLabel="perfil"></f:selectItem>
 				</h:selectOneRadio>
 
 				<br />
 				<br />
-				<label class="diseño_label1">Contenido a compartir:</label>
+				<label class="diseno_label1">Contenido a compartir:</label>
 
 				<h:selectManyCheckbox value="">
 					<f:selectItem itemValue="opcionUno" itemLabel="Programacion">
@@ -75,14 +70,12 @@
 				</h:selectManyCheckbox>
 				<br />
 				<br />
-				<label class="diseño_label1"> Descripcion General:</label>
-				<h:inputTextarea class="diseño_h:inputTex_area"
-					value="Cuestanos mas acerca de ti" rows="3" cols="20">
+				<label class="diseno_label1"> Descripcion General:</label>
+				<h:inputTextarea class="diseno_inputTex_area">
 				</h:inputTextarea>
 				<br />
 				<br />
-				<label class="diseño_label1"> <a href="terms_form.html"
-					target="_blank">Acepta terminos y condiciones</a>
+				<label class="diseno_label1"> <a href="terms_form.html"></a>
 				</label>
 				<h:selectBooleanCheckbox>
 					<f:selectItem itemValue="terminos"
@@ -102,7 +95,8 @@
 						</h:commandButton>
 					</div>
 				</center>
-			</form>
+			</h:form>	
+			</div>
 		</center>
 	</div>
 </h:body>

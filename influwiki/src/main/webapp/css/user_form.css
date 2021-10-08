@@ -44,34 +44,35 @@ body {
 	background-color: rgb(64, 172, 105);
 }
 
-.formulario {
-	text-align: left;
-	text-decoration: none;
-	width: 50%;
-	padding: 20px;
+#formulario{
+    text-align: left;
+    text-decoration: none;
+    width: 50%;
+    /*background-color: white;*/
+    padding: 20px;
+}
+.diseno_label1{
+    display:inline-block;
+    width: 30%;
+    
+}
+.diseno_inputText1{
+    display: inline-block;
+    width: 50%;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
 }
 
-.diseño_label1 {
-	display: inline-block;
-	width: 30%;
-}
+.diseno_inputText_area{    
+    display: inline-block;
+    width: 50%;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    outline: none;   
 
-.diseño_input1 {
-	display: inline-block;
-	width: 50%;
-	height: 25px;
-	border: none;
-	border-radius: 5px;
-	outline: none;
-}
-
-.diseño_input_area {
-	display: inline-block;
-	width: 50%;
-	height: 60px;
-	border: none;
-	border-radius: 5px;
-	outline: none;
 }
 
 .boton_formulario1 {
@@ -91,10 +92,20 @@ a {
 	color: black;
 	text-decoration: none;
 }
+/* .boton_formulario1:hover{background-color: me cambia el color cuando paso el puntero por el boton*/
+.boton_formulario1:hover{
+    background-color:  #5d8622;
+    /* cursor:pointer me convierte el puntero en manito cuando paso por el boton*/
+    cursor:pointer;
+}
+#formulario{
+    background: rgba(227, 199, 247, 0.37);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 11px );
+    -webkit-backdrop-filter: blur( 11px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 
-.boton_formulario1:hover {
-	background-color: #5d8622;
-	cursor: pointer;
 }
 
 .formulario {
