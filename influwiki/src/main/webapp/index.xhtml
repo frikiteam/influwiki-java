@@ -10,80 +10,106 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Bienvenido a influwiki</title>
-<link rel="stylesheet" href="./css/index.css"> </link>
+<link rel="stylesheet" href="css/index.css"> </link>
 </h:head>
 	<h:body>
-		<header class="space-between"> <nav
-			class="full-width container-barnav">
-		<div class="bar_nav container x-auto flex space-between">
-			<img class="logo" src="./img/logo.png" alt="Logotipo de InfluWiki"> </img>.
-			<ul class="flex menu_bar y-center">
-				<li><a href="#about">Sobre Nosotros</a></li>
-				<li><a href="#explorer">Explorar</a></li>
-				<li><a href="" class="btn-negative">Iniciar Sesión</a></li>
-			</ul>
-		</div>
-		</nav>
-		<div class="full-width full-height">
-			<div
-				class="header-body container full-height x-auto flex space-between y-center wrap">
-				<div class="text-ctn flex ">
-					<h1>Cambia tu educación de una manera diferente</h1>
-					<p>Conoce personas que te ayudarán en tu progreso de estudio en
-						ocasiones totalmente gratis, ya sea por redes sociales o
-						plataformas virtuales.</p>
-					<a href="" class="btn green">Registrarme</a>
-				</div>
-				<img class="draw" src="./img/header-draw.svg"
-					alt="Ilustración de estudiantes en las escaleras">  </img>
-			</div>
-		</div>
-		</header>
-		<main> <section id="about" class="full-width">
-		<div class="container x-auto full-height flex space-between y-center">
-			<img class="draw" src="./img/about-draw.svg"
-				alt="Ilustración de una estudiante teniendo una clase virtual">  </img>
-			<div class="text-ctn flex">
-				<h2>Somos el puente para encontrar lo que necesitas</h2>
-				<p>Hola, en esta página podrás encontrar creadores de contenido
-					relacionados con la educación (por ahora en programación) que te
-					ayudarán en tu camino del aprendizaje, podrás buscar por su nombre
-					o filtrar por lenguajes así al presionar en un influencer se
-					mostrará el perfil con un breve resumen y los links
-					correspondientes. ¡Anímate a aprender!</p>
-			</div>
-		</div>
-		</section> <section id="explorer" class="full-width">
-		<div class="container x-auto full-height flex space-between y-center">
-			<h2>
-				Conoce creadores que enseñan programación <a class="category"
-					href="">entrando aquí</a>
-			</h2>
-			<img class="draw" src="./img/explorer-draw.svg"
-				alt="Ilustración de una estudiante teniendo una clase virtual">  </img>
-		</div>
-		</section> </main>
-		<footer class="full-width">
-		<div class="flex container x-auto space-between y-center">
-			<img class="ogo" src="./img/logo.png" alt="Logotipo de Influwiki">  </img>
-			<nav class="nav-footer flex space-between full-height y-center">
-			<ul>
-				<li><a href="">Explorar</a></li>
-				<li><a href="">Iniciar sesión</a></li>
-				<li><a href="">Registrarme</a></li>
-				<li><a href="">Recuperar contraseña</a></li>
-			</ul>
-			<ul>
-				<h3>Contacta con los creadores</h3>
-				<li><a href="">Brufeli</a></li>
-				<li><a href="">Yesid</a></li>
-				<li><a href="">Leonardo</a></li>
-				<li><a href="">María</a></li>
-				<li><a href="">Juan</a></li>
-				<li><a href="">Carlos</a></li>
-			</ul>
-			</nav>
-		</div>
-		</footer>
-	</h:body>
+    <header class="space-between">
+        <nav class="full-width container-barnav">
+            <div class="bar_nav container x-auto full-width flex space-between">
+                <img class="logo x-auto-mbl" src="img/logo.png" alt="Logotipo de InfluWiki"></img>
+                <ul class="flex menu_bar y-center d-none">
+                    <li>
+                        <a href="#about">Sobre Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="#explorer">Explorar</a>
+                    </li>
+                    <li>
+                        <a href="pages/login_form.xhtml" class="btn-negative">Iniciar Sesión</a>
+                        <h:outputLink value="pages/login_form.xhtml"> </h:outputLink>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="full-width full-height header-mbl">
+            <div class="header-body container full-height x-auto flex space-between y-center wrap">
+                <div class="text-ctn flex column">
+                    <h1>Cambia tu educación de una manera diferente</h1>
+                    <p>
+                       Conoce personas que te ayudarán en tu progreso de estudio en ocasiones totalmente gratis,
+                       ya sea por redes sociales o plataformas virtuales. 
+                    </p>
+                    <a href="" class="btn green">Registrarme</a>
+                </div>
+                <img class="draw" src="./img/header-draw.svg"
+                alt="Ilustración de estudiantes en las escaleras"></img>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="about" class="full-width">
+            <div class="container x-auto full-height flex space-between y-center wrap">
+                <img class="draw" src="./img/about-draw.svg" 
+                alt="Ilustración de una estudiante teniendo una clase virtual"></img>
+                <div class="text-ctn flex">
+                    <h2>Somos el puente para encontrar lo que necesitas</h2>
+                    <p>
+                        Hola, en esta página podrás encontrar creadores de contenido relacionados con la educación (por ahora en programación)
+                        que te ayudarán en tu camino del aprendizaje, podrás buscar por su nombre o filtrar por lenguajes así al presionar
+                        en un influencer se mostrará el perfil con un breve resumen y los links correspondientes. ¡Anímate a aprender!
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="explorer" class="full-width">
+            <div class="container x-auto full-height flex space-between y-center wrap">
+                <h2>Conoce creadores que enseñan programación <a class="category" href="">entrando aquí</a></h2>
+                <img class="draw" src="./img/explorer-draw.svg" 
+                alt="Ilustración de una estudiante teniendo una clase virtual"></img>
+            </div>
+        </section>
+    </main>
+    <footer class="full-width">
+        <div class="flex container x-auto space-between y-center wrap column">
+            <img class="logo" src="./img/logo.png" alt="Logotipo de Influwiki"></img>
+            <nav class="nav-footer flex space-between full-height y-center column">
+                <ul>
+                    <li>
+                        <a href="">Explorar</a>
+                    </li>
+                    <li>
+                        <a href="">Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a href="">Registrarme</a>
+                    </li>
+                    <li>
+                        <a href="">Recuperar contraseña</a>
+                    </li>
+                </ul>
+                <ul>
+                    <h3>Contacta con los creadores</h3>
+                    <li>
+                        <a href="">Brufeli</a>
+                    </li>
+                    <li>
+                        <a href="">Yesid</a>
+                    </li>
+                    <li>
+                        <a href="">Leonardo</a>
+                    </li>
+                    <li>
+                        <a href="">María</a>
+                    </li>
+                    <li>
+                        <a href="">Juan</a>
+                    </li>
+                    <li>
+                        <a href="">Carlos</a>
+                    </li>
+                </ul> 
+            </nav>
+        </div>
+    </footer>
+</h:body>
 </html>
