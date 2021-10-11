@@ -14,14 +14,15 @@
 	<link rel="stylesheet" href="../css/perfil.css"></link>
 	<title>Layout de Sitio Web con CSS GRID</title>
 </h:head>
-<h:body>
+<h:body id="Hbody">
 	<div class="contenedor">
-		<h:header class="header"> <a class="boton"
-			href="Explore_form.html">Atrás</a> <a href="index.html"
+		<header class="header"> <a class="boton"
+			href="Explore_form.html">Atrás</a> <a href="../index.xhtml"
 			title="ir a la página principal "> <!-- crear logo de pagina, y si no carga el nombre con alt sale el nombre de la empresa-->
 			<img class="logo" src="../img/Influwiki_Logo.png" alt="otra"></img>
-		</a> </h:header>
-		<h:main class="contenido">
+		</a> 
+		</header>
+		<main class="contenido">
 		<div class="content">
 			<div class="content__img">
 				<img src="../img/foto_perfil.jpg" alt="Foto de Perfil"></img>
@@ -46,8 +47,8 @@
 				src="../img/Js-logo.png" alt="Logo JavaScript"></img>
 		</div>
 
-		</h:main>
-		<h:aside class="sidebar">
+		</main>
+		<aside class="sidebar">
 		<div class="up">
 			<i class="fab fa-facebook font-weight-bold">&nbsp;@Carandev</i> <i
 				class="fab fa-instagram-square font-weight-bold">&nbsp;@Carandev</i>
@@ -56,7 +57,7 @@
 		<div class="down">
 			<h3>Cursos Destacados</h3>
 		</div>
-		</h:aside>
+		</aside>
 	</div>
 </h:body>
 </html>

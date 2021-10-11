@@ -14,7 +14,7 @@
 <h:body>
 
 
-	<h:header>
+	<header>
 	<center>
 		<a href="index.html" title="ir a la pagina principal " target="_blank">
 			<a href="Password_assignment_form.html" title="ir a otra pagina "
@@ -22,80 +22,94 @@
 		</a>
 		</a>
 	</center>
-	</h:header>
+	</header>
 
 	<div class="divFormulario">
 		<center>
 			<div id="formulario" class="formulario">
-			<h:form>
-				<h1>Formulario de Registro</h1>
-
-				<label class="diseno_label1" for="nombre"> Nombres: </label>
-
-				<h:inputTex class="diseno_inputTex1" id="nombre"></h:inputTex>
-				<br />
-				<br />
-				<label class="diseno_label1" for="apellido"> Apellidos: </label>
-				<h:inputTex class="diseno_inputTex1" id="Apellido"></h:inputTex>
-				<br />
-				<br />
-
-				<label class="diseno_label1" for="correo"> Correo: </label>
-				<h:inputTex class="diseno_inputTex1" id="correo"></h:inputTex>
-				<br />
-				<br />
-				
-				<label class="diseno_label1">Genero:</label>
+				<h:form>
+					<h1>Formulario de Registro</h1>
+					<p:panelGrid columns="2"
+						columnClasses="ui-grid-col-4, ui-grid-col-8 " layout="grid"
+						styleClass="ui-panelgrid-blank ui-fluid "
+						style="border:0px none; background-color:transparent;">
 
 
-				<h:selectOneRadio name="genero">
-					<f:selectItem itemValue="Masculino" itemLabel="genero"></f:selectItem>
-				</h:selectOneRadio>
-				<br />
-				<br />
-				<label class="diseno_label1">Perfil:</label>
-				<h:selectOneRadio>
-					<f:selectItem itemValue="Influwiki" itemLabel="perfil"></f:selectItem>
-				</h:selectOneRadio>
 
-				<br />
-				<br />
-				<label class="diseno_label1">Contenido a compartir:</label>
+						<p:outputLabel class="diseno_label1" for="@next" value="Nombres" />
+						<p:inputText placeholder="Ingresa tu nombre ej: Fernando"
+							required="true" />
 
-				<h:selectManyCheckbox value="">
-					<f:selectItem itemValue="opcionUno" itemLabel="Programacion">
-					</f:selectItem>
-					<f:selectItem itemValue="opcionDos" itemLabel="Diseño"></f:selectItem>
-					<f:selectItem itemValue="opcionTres" itemLabel="Otra"></f:selectItem>
-				</h:selectManyCheckbox>
-				<br />
-				<br />
-				<label class="diseno_label1"> Descripcion General:</label>
-				<h:inputTextarea class="diseno_inputTex_area">
-				</h:inputTextarea>
-				<br />
-				<br />
-				<label class="diseno_label1"> <a href="terms_form.html"></a>
-				</label>
-				<h:selectBooleanCheckbox>
-					<f:selectItem itemValue="terminos"
-						itemLabel="Terminos y Condiciones"></f:selectItem>
-				</h:selectBooleanCheckbox>
+						<p:outputLabel for="@next" value="Apellidos" />
+						<p:inputText placeholder="Ingresa tu apellido ej: Herrera"
+							required="true" />
 
-				<br />
-				<br />
-				<center>
+						<p:outputLabel for=" @next" value="Correo electronico" />
+						<p:inputText placeholder="Ej: fernando.herrera@tuempresa.com"
+							required="true" />
 
-					<div class="botones_formulario">
-						<h:commandButton class="boton_formulario1" type="submit"
-							value="guardar">Guardar </h:commandButton>
-						<h:commandButton class="boton_formulario1" type="submit"
-							value="iniciarSesion">
-							<a href="login_form.html">Iniciar sesión</a>
-						</h:commandButton>
-					</div>
-				</center>
-			</h:form>	
+						<p:outputLabel for="@next" value="Genero: " />
+						<p:selectOneRadio id="console" layout="grid" columns="1"
+							value="#{radioView.console}" unselectable="true" required="true">
+							<f:selectItem itemLabel="Femenino" itemValue="Option1" />
+							<f:selectItem itemLabel="Masculino" itemValue="Option2" />
+							<f:selectItem itemLabel="Otro" itemValue="Option3" />
+						</p:selectOneRadio>
+
+						<p:outputLabel for="@next" required="true" value="Perfil: " />
+						<p:selectBooleanCheckbox value="#{selectBooleanView.value1}"
+							itemLabel="Influwiki" disabled="true" />
+
+
+						<p:outputLabel for="@next" required="true" value="Temática: " />
+						<p:selectOneMenu id="option"
+							value="#{selectOneMenuView.selectedOption}">
+							<f:selectItem itemLabel="Seleccione..." itemValue="" />
+							<f:selectItem itemLabel="Programación" itemValue="Option1" />
+							<f:selectItem itemLabel="Diseño" itemValue="Option2" />
+							<f:selectItem itemLabel="Otro" itemValue="Option3" />
+						</p:selectOneMenu>
+
+						<p:outputLabel for="@next" value="Descripción General" />
+						<p:inputTextarea rows="4" required="true" />
+
+						<p:row styleClass="ui-grid-col-12">
+
+							<p:selectBooleanCheckbox value="#{selectBooleanView.value1}"
+								required="true" />
+							<a href="terms_form.xhtml"> <u> Aceptar terminos y
+									condiciones </u></a>
+
+
+
+
+						</p:row>
+						<p:row>
+							<p:column styleClass="ui-grid-col-12">
+								<p>
+									Aca podrián ir algunas notas sobre el formulario por ejemplo
+									que es solo para personas que tengas algun tipo de enseñanza <u>Registration
+										Number</u>
+								</p>
+							</p:column>
+						</p:row>
+
+					</p:panelGrid>
+					<p:row>
+						<center>
+
+							<div class="botones_formulario">
+								<h:commandButton class="boton_formulario1" type="submit"
+									value="guardar"></h:commandButton>
+								<h:commandButton class="boton_formulario1"
+									value="Cancelar e iniciar Sesion">
+									<a href="login_form.xhtml"></a>
+								</h:commandButton>
+							</div>
+						</center>
+
+					</p:row>
+				</h:form>
 			</div>
 		</center>
 	</div>
