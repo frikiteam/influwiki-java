@@ -32,8 +32,7 @@
 								<div class="p-5">
 									<div class="text-center">
 										<a href="../index.xhtml" title="ir a la pagina principal ">
-										 <img src="../img/Influwiki_letras.png"
-											alt="otra"></img>
+											<img src="../img/Influwiki_letras.png" alt="otra"></img>
 										</a>
 									</div>
 									<br />
@@ -41,46 +40,46 @@
 									<h:form action="" class="mt-4">
 
 										<div class="p-grid ui-fluid">
-											<div class="p-col-12 mb-4">
-												<div class="ui-inputgroup">
-													<div class="ui-inputgroup-addon">
-														<i class="pi pi-user"
-															style="color: #81C91D; font-size: 18px"></i>
-													</div>
-													<p:inputText placeholder="Nombre de usuario" value="#{f}" />
-												</div>
-											</div>
 
 
-											<div class="p-col-12 mb-4">
-												<div class="ui-inputgroup">
-													<div class="ui-inputgroup-addon">
-														<i class="pi pi-key"
-															style="color: #81C91D; font-size: 18px"></i>
-													</div>
-													<p:password id="toggle" value="#{f}"
-														placeholder="Ingrese la contraseña" redisplay="true" />
-												</div>
-											</div>
+											<p:messages id="msgs" />
+
+											<h:panelGrid columns="3" cellpadding="7" styleClass="p-mb-3">
+												<p:outputLabel for="correo" value="correo de usuario:" />
+												<p:inputText id="correo"
+													value="#{UsuarioBean.correo}" required="true"
+													label="correo">
+													<f:validateLength minimum="2" />
+												</p:inputText>
+												<p:message for="correo" display="icon" />
+
+												<p:outputLabel for="contrasena" value="contraseña:" />
+												<p:password id="contrasena"
+													value="#{UsuarioBean.contrasena}" label="contrasena"
+													required="true">
+													<f:validateLength minimum="2" />
+													<p:ajax update="msgLastname" event="keyup" />
+												</p:password>
+												<p:message for="contrasena" id="msgLastname" display="icon" />
+
+											</h:panelGrid>
+
+											<p:commandButton value="Iniciar sesion" update="@form"
+												action="#{UsuarioBean.iniciarSesion()}" icon="pi pi-check" />
+
+
+
 										</div>
-										<div class="col-sm-12 mt-4">
-											<a href="editar_perfil.xhtml"> 
-											<h:commandButton type="button"
-													class="btn brColor btn-user  btn-block mt-4"
-													value="Iniciar sesion">
-												</h:commandButton>
-											</a>
-
-										</div>
+										
 									</h:form>
 									<hr>
-									<div class="text-center d-flex justify-content-between mt-4">
-									
-									
-										<a class="small" href="Password_recovery_form.xhtml">Olvidé
-											mi Contraseña?</a> <a class="small" href="user_form.xhtml">Crear
-											Cuenta!</a>
-									</div>
+										<div class="text-center d-flex justify-content-between mt-4">
+
+
+											<a class="small" href="Password_recovery_form.xhtml">Olvidé
+												mi Contraseña?</a> <a class="small" href="user_form.xhtml">Crear
+												Cuenta!</a>
+										</div>
 									</hr>
 								</div>
 							</div>

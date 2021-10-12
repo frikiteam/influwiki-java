@@ -2,8 +2,10 @@ package co.frikiteam.influwiki.controller;
 
 import java.io.Serializable;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 /**
  * Clase bean de usuario
@@ -200,7 +202,12 @@ public class UsuarioBean implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	
+	/*
+	 * Metodo encargado de validar el inicio de sesion.
+	 */
+	 public void iniciarSesion() {
+	        FacesContext.getCurrentInstance().addMessage(null,
+	                new FacesMessage("Bienvenido " + correo ));
+	    }
 	
 }
