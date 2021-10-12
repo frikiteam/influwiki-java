@@ -209,5 +209,16 @@ public class UsuarioBean implements Serializable{
 	        FacesContext.getCurrentInstance().addMessage(null,
 	                new FacesMessage("Bienvenido " + correo ));
 	    }
-	
+	 
+	/*
+	 * Metodo encargado de enviar correo para recuperacion de contraseña.
+	 */
+	public void recuperacionContrasena() {
+		FacesContext.getCurrentInstance().addMessage(null,
+                new FacesMessage("Correo enviado a " + correo ));
+	}
+	public String retornarLogin() {
+		String url = "login_form.xhtml";
+		return url;
+	}
 }
