@@ -1,6 +1,9 @@
-package co.frikiteam.influwiki.bean;
+package co.frikiteam.influwiki.controller;
 
 import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 /**
  * Clase bean de usuario
@@ -8,6 +11,8 @@ import java.io.Serializable;
  * @author yety9
  *
  */
+@ManagedBean(name="UsuarioBean")
+@SessionScoped
 public class UsuarioBean implements Serializable{
 	
 	/**
@@ -27,9 +32,13 @@ public class UsuarioBean implements Serializable{
 	
 	private String correo;
 	
-	private String id_perfil; // hace referencia si es un influencer o Administrador
+	private String contrasena;
 	
-	private String area; // hace referencia al tipo detematica
+	private int id_perfil; // hace referencia si es un influencer o Administrador
+	
+	private String contenido;
+	
+	private int id_area; // hace referencia al tipo detematica
 	
 	private String fecha_registro;
 	
@@ -41,87 +50,157 @@ public class UsuarioBean implements Serializable{
 
 	}
 
+	
+
+
 	public long getId() {
 		return id;
 	}
+
+
 
 	public void setId(long id) {
 		this.id = id;
 	}
 
+
+
 	public String getNombres() {
 		return nombres;
 	}
+
+
 
 	public void setNombres(String nombres) {
 		this.nombres = nombres;
 	}
 
+
+
 	public String getApellidos() {
 		return apellidos;
 	}
+
+
 
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 
+
+
 	public String getGenero() {
 		return genero;
 	}
+
+
 
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
 
+
+
 	public String getApodo() {
 		return apodo;
 	}
+
+
 
 	public void setApodo(String apodo) {
 		this.apodo = apodo;
 	}
 
+
+
 	public String getCorreo() {
 		return correo;
 	}
+
+
 
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
 
-	public String getId_perfil() {
+
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
+
+
+	public int getId_perfil() {
 		return id_perfil;
 	}
 
-	public void setId_perfil(String id_perfil) {
+
+
+	public void setId_perfil(int id_perfil) {
 		this.id_perfil = id_perfil;
 	}
 
-	public String getArea() {
-		return area;
+
+
+	public String getContenido() {
+		return contenido;
 	}
 
-	public void setArea(String area) {
-		this.area = area;
+
+
+	public void setContenido(String contenido) {
+		this.contenido = contenido;
 	}
+
+
+
+	public int getId_area() {
+		return id_area;
+	}
+
+
+
+	public void setId_area(int id_area) {
+		this.id_area = id_area;
+	}
+
+
 
 	public String getFecha_registro() {
 		return fecha_registro;
 	}
 
+
+
 	public void setFecha_registro(String fecha_registro) {
 		this.fecha_registro = fecha_registro;
 	}
+
+
 
 	public String getActulizado() {
 		return actulizado;
 	}
 
+
+
 	public void setActulizado(String actulizado) {
 		this.actulizado = actulizado;
 	}
 
-	
-	
 
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	
+	
 }

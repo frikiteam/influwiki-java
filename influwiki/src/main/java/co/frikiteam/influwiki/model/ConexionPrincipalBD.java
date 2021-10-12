@@ -1,4 +1,4 @@
-package co.frikiteam.influwiki.controller;
+package co.frikiteam.influwiki.model;
 
 /**
  * 
