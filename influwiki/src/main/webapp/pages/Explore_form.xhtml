@@ -12,7 +12,6 @@
 	<link rel="stylesheet" href="../css/Explore_form.css"></link>
 </h:head>
 <h:body>
-	<!-- aqui vamos a colocar un logo y un menu, para eso es nav y ul-->
 	<header>
 	<center>
 		<!-- crear hipervinculos para mi logo sin cerrar mi pagina inicial-->
@@ -21,65 +20,38 @@
 		</a>
 	</center>
 	</header>
+	<br></br>
+	<br></br>
 	<center>
-		<div class="caja_g">
-			<div class="caja_n">
-				<img src="../img/foto_perfil.jpg " alt="foto perfil"></img>
-				<h1>Nombre Influwiki 1</h1>
-			</div>
-			<div class="caja_a">
-				<p>Programas que maneja</p>
-				<p>Cursos</p>
-			</div>
-			<div class="caja_r">
-					<a href="perfil_form.xhtml"> <h:commandButton type="button"	class="btn brColor btn-user  btn-block mt-4" value="Ver perfil"></h:commandButton></a>
-			</div>
-		</div>
-		<br />
-		<br />
-		<div class="caja_g">
-			<div class="caja_n">
-				<img src="../img/foto_perfil.jpg " alt="foto perfil"></img>
-				<h1>Nombre Influwiki 2</h1>
-			</div>
-			<div class="caja_a">
-				<p>Programas que maneja</p>
-				<p>Cursos</p>
-			</div>
-			<div class="caja_r">
-				<a href="perfil_form.xhtml"> <h:commandButton type="button"	class="btn brColor btn-user  btn-block mt-4" value="Ver perfil"></h:commandButton></a>
-			</div>
-		</div>
-		<br />
-		<br />
-		<div class="caja_g">
-			<div class="caja_n">
-				<img src="../img/foto_perfil.jpg " alt="foto perfil"></img>
-				<h1>Nombre Influwiki 3</h1>
-			</div>
-			<div class="caja_a">
-				<p>Programas que maneja</p>
-				<p>Cursos</p>
-			</div>
-			<div class="caja_r">
-				<a href="perfil_form.xhtml"> <h:commandButton type="button"	class="btn brColor btn-user  btn-block mt-4" value="Ver perfil"></h:commandButton></a>
-			</div>
-		</div>
-		<br />
-		<br />
-		<div class="caja_g">
-			<div class="caja_n">
-				<img src="../img/foto_perfil.jpg " alt="foto perfil"></img>
-				<h1>Nombre Influwiki 4</h1>
-			</div>
-			<div class="caja_a">
-				<p>Programas que maneja</p>
-				<p>Cursos</p>
-			</div>
-			<div class="caja_r">
-				<a href="perfil_form.xhtml"> <h:commandButton type="button"	class="btn brColor btn-user  btn-block mt-4" value="Ver perfil"></h:commandButton></a>
-			</div>
-		</div>
+		<p:card style="width: 25em">
+			<f:facet name="header">
+				<img alt="user header" src="../img/foto_perfil.jpg"
+					style="height: 30em" />
+			</f:facet>
+			<f:facet name="title">
+        Nombre del Influencer
+    </f:facet>
+			<f:facet name="subtitle">
+        Lenguajes
+    </f:facet>
+
+			<f:facet name="footer">
+				
+				<h:form>
+				<p:commandButton value="Ver Perfil" 
+					action="#{UsuarioBean.verPerfil()}" icon="pi sign-in" />
+				</h:form>
+				<!-- 				
+				<p:commandButton icon="pi sign-in" value="Ver Perfil" action="#{UsuarioBean.iniciarSesion()}" -->
+				<!-- 					style="margin-left: .5em" /> <a href="perfil_form.xhtml"><u>Ver perfil</u></a>-->
+				<!--<p:commandButton icon="pi pi-times" value="Cancel" 
+					styleClass="ui-button-secondary" style="margin-left: .5em" />-->
+			</f:facet>
+		</p:card>
+
+		<br></br>
+
 	</center>
+
 </h:body>
 </html>

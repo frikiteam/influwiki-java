@@ -225,6 +225,11 @@ public class UsuarioBean implements Serializable{
 		String url = "login_form.xhtml";
 		return url;
 	}
+	
+	public String verPerfil() {
+		String url = "perfil_form.xhtml";
+		return url;
+	}
 
 	public String getMensajeSaludo() {
 		return mensajeSaludo;
