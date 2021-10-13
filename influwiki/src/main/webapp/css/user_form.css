@@ -47,7 +47,7 @@ body {
 #formulario {
 	text-align: left;
 	text-decoration: none;
-	width: 50%;
+	width: 60%;
 	/*background-color: white;*/
 	padding: 20px;
 }
@@ -116,6 +116,8 @@ a {
 	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
+
 
 /* Estilo sobre prime faces */
 .ui-inputgroup {

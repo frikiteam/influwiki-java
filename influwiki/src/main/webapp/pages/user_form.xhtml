@@ -16,8 +16,8 @@
 
 	<header>
 	<center>
-		<a href="../index.xhtml" title="ir a la pagina principal ">
-			<img src="../img/Influwiki_Logo.png" alt="otra"></img>		
+		<a href="../index.xhtml" title="ir a la pagina principal "> <img
+			src="../img/Influwiki_Logo.png" alt="otra"></img>
 		</a>
 	</center>
 	</header>
@@ -26,59 +26,98 @@
 		<center>
 			<div id="formulario" class="formulario">
 				<h:form>
+
 					<h1>Formulario de Registro</h1>
-					<p:panelGrid columns="2"
+
+					<p:messages id="msgs" styleClass="p-mb-3" />
+
+					<p:panelGrid columns="3"
 						columnClasses="ui-grid-col-4, ui-grid-col-8 " layout="grid"
-						styleClass="ui-panelgrid-blank ui-fluid "
+						styleClass="ui-panelgrid-blank ui-fluid p-mb-3"
 						style="border:0px none; background-color:transparent;">
 
+						<p:outputLabel class="diseno_label1" for="nombres" value="Nombres" />
+						<p:inputText id="nombres"
+							placeholder="Ingresa tu nombre ej: Fernando" required="true"
+							value="#{UsuarioBean.nombres}">
+							<f:validateLength minimum="4" />
+						</p:inputText>
+						<p:message for="nombres" display="icon" />
 
+						<p:outputLabel for="apellidos" value="Apellidos" />
+						<p:inputText id="apellidos"
+							placeholder="Ingresa tu apellido ej: Herrera" required="true"
+							value="#{UsuarioBean.apellidos}">
+							<f:validateLength minimum="4" />
+						</p:inputText>
+						<p:message for="apellidos" display="icon" />
 
-						<p:outputLabel class="diseno_label1" for="@next" value="Nombres" />
-						<p:inputText placeholder="Ingresa tu nombre ej: Fernando"
-							required="true" />
+						<p:outputLabel for="apodo" value="Apodo / Nick" />
+						<p:inputText id="apodo" placeholder="Ingresa tu nick: FHerrera"
+							required="true" value="#{UsuarioBean.apodo}">
+							<f:validateLength minimum="4" />
+						</p:inputText>
+						<p:message for="apodo" display="icon" />
 
-						<p:outputLabel for="@next" value="Apellidos" />
-						<p:inputText placeholder="Ingresa tu apellido ej: Herrera"
-							required="true" />
+						<p:outputLabel for="correo" value="Correo electronico" />
+						<p:inputText id="correo"
+							placeholder="Ej: fernando.herrera@tuempresa.com" required="true"
+							value="#{UsuarioBean.correo}">
+							<f:validateLength minimum="4" />
+						</p:inputText>
+						<p:message for="correo" display="icon" />
 
-						<p:outputLabel for=" @next" value="Correo electronico" />
-						<p:inputText placeholder="Ej: fernando.herrera@tuempresa.com"
-							required="true" />
+						<p:outputLabel for="contrasena" value="Contraseña" />
+						<p:password id="contrasena" placeholder="Digita la contraseña"
+							required="true" styleClass="ui-fluid ui-inputtext"
+							value="#{UsuarioBean.contrasena}">
+							<f:validateLength minimum="4" />
+						</p:password>
+						<p:message for="contrasena" display="icon" />
 
-						<p:outputLabel for="@next" value="Genero: " />
-						<p:selectOneRadio id="console" layout="grid" columns="1"
-							value="#{radioView.console}" unselectable="true" required="true">
+						<p:outputLabel for="genero" value="Genero: " />
+						<p:selectOneRadio id="genero" layout="grid" columns="1"
+							value="#{UsuarioBean.genero}" unselectable="true" required="true">
 							<f:selectItem itemLabel="Femenino" itemValue="Option1" />
 							<f:selectItem itemLabel="Masculino" itemValue="Option2" />
 							<f:selectItem itemLabel="Otro" itemValue="Option3" />
 						</p:selectOneRadio>
+						<p:message for="genero" display="icon" />
 
-						<p:outputLabel for="@next" required="true" value="Perfil:"/>
-						<p:selectBooleanCheckbox value="#{selectBooleanView.value1}"
-							itemLabel="Influwiki" disabled="true" />
+						<p:outputLabel for="perfil" value="Perfil:" />
+						<p:selectBooleanCheckbox id="perfil"
+							value="#{UsuarioBean.id_perfil}" itemLabel="Influwiki"
+							disabled="false" />
+						<p:message for="perfil" display="icon" />
 
-
-						<p:outputLabel for="@next" required="true" value="Temática: " />
-						<p:selectOneMenu id="option"
-							value="#{selectOneMenuView.selectedOption}">
+						<p:outputLabel for="idarea" value="Temática: " />
+						<h:selectOneMenu id="idarea" value="#{UsuarioBean.id_area}"
+							required="true">
 							<f:selectItem itemLabel="Seleccione..." itemValue="" />
-							<f:selectItem itemLabel="Programación" itemValue="Option1" />
-							<f:selectItem itemLabel="Diseño" itemValue="Option2" />
-							<f:selectItem itemLabel="Otro" itemValue="Option3" />
-						</p:selectOneMenu>
+							<f:selectItem itemLabel="Programación" itemValue="1" />
+							<f:selectItem itemLabel="Diseño" itemValue="2" />
+							<f:selectItem itemLabel="Otro" itemValue="3" />
+						</h:selectOneMenu>
+						<p:message for="idarea" display="icon" />
 
-						<p:outputLabel for="@next" value="Descripción General" />
-						<p:inputTextarea rows="4" required="true" />
+						<p:outputLabel for="descripcion" value="Descripción General" />
+						<p:inputTextarea id="descripcion" rows="4" required="true"
+							value="#{UsuarioBean.contenido}">
+							<f:validateLength minimum="20" />
+						</p:inputTextarea>
+						<p:message for="descripcion" display="icon" />
+
 
 						<p:row styleClass="ui-grid-col-12">
 
-							<p:selectBooleanCheckbox value="#{selectBooleanView.value1}"
-								required="true" />
-							<a href="terms_form.xhtml" target="blank"> <u> Aceptar terminos y
-									condiciones </u></a>
+							<p:selectBooleanCheckbox id="terminos" required="true" />
 
-
+							<a href="terms_form.xhtml" target="blank"> 
+							<u>
+							 <p:outputLabel for="terminos" value="Terminos y condiciones" />
+							</u>
+							</a>
+							<p:message for="terminos" display="icon" />
 
 
 						</p:row>
@@ -91,19 +130,19 @@
 								</p>
 							</p:column>
 						</p:row>
-
 					</p:panelGrid>
 					<p:row>
 						<center>
 
 							<div class="botones_formulario">
 								<h:commandButton class="boton_formulario1" type="submit"
-									value="Guardar"></h:commandButton>
-									<a href="login_form.xhtml"><u>Cancelar e iniciar Sesion</u></a>
+									action="#{UsuarioBean.mostrarDatos()}" value="Guardar"></h:commandButton>
+								<a href="login_form.xhtml"><u>Cancelar e iniciar Sesion</u></a>
 							</div>
 						</center>
 
 					</p:row>
+					<h:outputText value="#{UsuarioBean.mensajeSaludo}"></h:outputText>
 				</h:form>
 			</div>
 		</center>

@@ -18,7 +18,7 @@ import javax.faces.context.FacesContext;
 public class UsuarioBean implements Serializable{
 	
 	/**
-	 * 
+	 * Serialización de la Clase
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -36,23 +36,27 @@ public class UsuarioBean implements Serializable{
 	
 	private String contrasena;
 	
-	private int id_perfil; // hace referencia si es un influencer o Administrador
+	private String id_perfil; // hace referencia si es un influencer o Administrador
 	
 	private String contenido;
-	
-	private int id_area; // hace referencia al tipo detematica
 	
 	private String fecha_registro;
 	
 	private String actulizado;
 	
+	private int id_area; // hace referencia al tipo detematica
+
+	private String mensajeSaludo;
 	
 
 	public UsuarioBean() {
 
 	}
-
 	
+	public void mostrarDatos() {
+		 FacesContext.getCurrentInstance().addMessage(null,
+	                new FacesMessage("Welcome " + nombres ));
+	}
 
 
 	public long getId() {
@@ -139,13 +143,13 @@ public class UsuarioBean implements Serializable{
 
 
 
-	public int getId_perfil() {
+	public String getId_perfil() {
 		return id_perfil;
 	}
 
 
 
-	public void setId_perfil(int id_perfil) {
+	public void setId_perfil(String id_perfil) {
 		this.id_perfil = id_perfil;
 	}
 
@@ -220,5 +224,13 @@ public class UsuarioBean implements Serializable{
 	public String retornarLogin() {
 		String url = "login_form.xhtml";
 		return url;
+	}
+
+	public String getMensajeSaludo() {
+		return mensajeSaludo;
+	}
+
+	public void setMensajeSaludo(String mensajeSaludo) {
+		this.mensajeSaludo = mensajeSaludo;
 	}
 }
