@@ -46,9 +46,8 @@
 
 											<h:panelGrid columns="3" cellpadding="7" styleClass="p-mb-3">
 												<p:outputLabel for="correo" value="correo de usuario:" />
-												<p:inputText id="correo"
-													value="#{UsuarioBean.correo}" required="true"
-													label="correo">
+												<p:inputText id="correo" value="#{UsuarioBean.correo}"
+													required="true" label="correo">
 													<f:validateLength minimum="2" />
 												</p:inputText>
 												<p:message for="correo" display="icon" />
@@ -65,14 +64,14 @@
 											</h:panelGrid>
 
 											<p:commandButton value="Iniciar sesion" update="@form"
-												action="#{UsuarioBean.iniciarSesion()}" icon="pi pi-check" />
-
+												action="#{UsuarioBean.iniciarSesion()}" icon="pi pi-sign-in"
+												styleClass="ui-button-success" />
 
 
 										</div>
-										
+
 									</h:form>
-									<hr>
+									<hr/>
 										<div class="text-center d-flex justify-content-between mt-4">
 
 
@@ -80,7 +79,7 @@
 												mi Contraseña?</a> <a class="small" href="user_form.xhtml">Crear
 												Cuenta!</a>
 										</div>
-									</hr>
+									<hr/>
 								</div>
 							</div>
 						</div>

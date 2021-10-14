@@ -23,30 +23,28 @@
 	<br></br>
 	<br></br>
 	<center>
-		<p:card style="width: 25em">
-			<f:facet name="header">
-				<img alt="user header" src="../img/foto_perfil.jpg"
-					style="height: 30em" />
-			</f:facet>
-			<f:facet name="title">
+		<p:card style="width: 15em" styleClass="img-ui">
+
+
+				<f:facet name="header">
+					<img alt="user header" src="../img/foto_perfil.jpg"
+						style="height: 18em" />
+				</f:facet>
+				<f:facet name="title">
         Nombre del Influencer
     </f:facet>
-			<f:facet name="subtitle">
+				<f:facet name="subtitle">
         Lenguajes
     </f:facet>
 
-			<f:facet name="footer">
-				
-				<h:form>
-				<p:commandButton value="Ver Perfil" 
-					action="#{UsuarioBean.verPerfil()}" icon="pi sign-in" />
-				</h:form>
-				<!-- 				
-				<p:commandButton icon="pi sign-in" value="Ver Perfil" action="#{UsuarioBean.iniciarSesion()}" -->
-				<!-- 					style="margin-left: .5em" /> <a href="perfil_form.xhtml"><u>Ver perfil</u></a>-->
-				<!--<p:commandButton icon="pi pi-times" value="Cancel" 
-					styleClass="ui-button-secondary" style="margin-left: .5em" />-->
-			</f:facet>
+				<f:facet name="footer">
+
+					<h:form>
+						<p:commandButton value="Ver Perfil"
+							action="#{UsuarioBean.verPerfil()}" icon="pi pi-window-maximize" />
+					</h:form>
+
+				</f:facet>
 		</p:card>
 
 		<br></br>

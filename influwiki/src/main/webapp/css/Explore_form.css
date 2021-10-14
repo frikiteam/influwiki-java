@@ -45,7 +45,7 @@ body{
     text-align: right;
 }
 
-.diseño_boton{
+.diseno_boton{
     width: 20%;
     height: 35px;    
     margin: 5px;
@@ -55,7 +55,11 @@ body{
     border-color: rgba(2, 102, 44, 0.712);
     border-radius: 5px;
 }
-.diseño_boton:hover{
+.diseno_boton:hover{
     background-color: rgb(64, 172, 105);
     cursor:pointer;
+}
+
+.img-ui{
+	box-shadow: 10px 5px 5px black;
 }

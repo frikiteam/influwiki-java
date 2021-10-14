@@ -87,7 +87,7 @@
 						<p:outputLabel for="perfil" value="Perfil:" />
 						<p:selectBooleanCheckbox id="perfil"
 							value="#{UsuarioBean.id_perfil}" itemLabel="Influwiki"
-							disabled="false" />
+							disabled="true" />
 						<p:message for="perfil" display="icon" />
 
 						<p:outputLabel for="idarea" value="Temática: " />
@@ -110,13 +110,12 @@
 
 						<p:row styleClass="ui-grid-col-12">
 
-							<p:selectBooleanCheckbox id="terminos" required="true" />
+							<p:selectBooleanCheckbox id="terminos" value="#{UsuarioBean.terminosCondiciones}" required="true"/>
 
-							<a href="terms_form.xhtml" target="blank"> 
-							<u>
-							 <p:outputLabel for="terminos" value="Terminos y condiciones" />
-							</u>
-							</a>
+
+							<a href="terms_form.xhtml" target="blank"> Terminos y
+								condiciones </a>
+
 							<p:message for="terminos" display="icon" />
 
 
