@@ -9,7 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import co.frikiteam.influwiki.DAO.UsuarioDAO;
+import co.frikiteam.influwiki.Dao.UsuarioDao;
 
 /**
  * Clase bean de usuario
@@ -240,7 +240,7 @@ public class UsuarioBean implements Serializable {
 	 */
 
 	//Creación del obejeto Usuario
-	static UsuarioDAO usuarioDAO = new UsuarioDAO();
+	static UsuarioDao usuarioDAO = new UsuarioDao();
 	
 	//Creación del Mapeo
 	private static Map<String, Object> mapUsuario;
