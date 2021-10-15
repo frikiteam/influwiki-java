@@ -283,7 +283,6 @@ public class UsuarioBean implements Serializable {
 		// Asiagnación de datos al modelo de usuario
 		usuario.setNombres(nombres);
 		usuario.setApellidos(apellidos);
-		;
 		usuario.setApodo(apodo);
 		usuario.setCorreo(correo);
 		usuario.setContrasena(contrasena);
@@ -305,21 +304,22 @@ public class UsuarioBean implements Serializable {
 		
 			if (conexionExitosa) {
 				FacesContext.getCurrentInstance().addMessage(null,
-						new FacesMessage("Se esta validando el " + "Resgistros para " + nombres));
+						new FacesMessage("Se esta validando el " + "Resgistro para " + nombres));
 
 			}
 			
-			/*
-			 * try { Thread.sleep(4 * 1000); } catch (Exception e) { System.out.println(e);
-			 * 
-			 * }
-			 */
-			 ConsultarUsariosInfluwiki();
+			
+			  try { Thread.sleep(4 * 1000); } catch (Exception e) { System.out.println(e);
+			 
+			  }
+			 
+			 //ConsultarUsariosInfluwiki();//
+			 
 		return Url;
 
 	}
 	
-	
+	/*
 	public void ConsultarUsariosInfluwiki() {
 		int tamanioArray;
 		UsuarioDao usuarios = new UsuarioDao();
@@ -331,5 +331,5 @@ public class UsuarioBean implements Serializable {
 		
 		
 	}
-
+	 */
 }
