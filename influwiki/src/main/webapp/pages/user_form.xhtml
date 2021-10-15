@@ -78,9 +78,9 @@
 						<p:outputLabel for="genero" value="Genero: " />
 						<p:selectOneRadio id="genero" layout="grid" columns="1"
 							value="#{UsuarioBean.genero}" unselectable="true" required="true">
-							<f:selectItem itemLabel="Femenino" itemValue="Option1" />
-							<f:selectItem itemLabel="Masculino" itemValue="Option2" />
-							<f:selectItem itemLabel="Otro" itemValue="Option3" />
+							<f:selectItem itemLabel="Femenino" itemValue="Femenino" />
+							<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+							<f:selectItem itemLabel="Otro" itemValue="Otro" />
 						</p:selectOneRadio>
 						<p:message for="genero" display="icon" />
 
@@ -135,7 +135,7 @@
 
 							<div class="botones_formulario">
 								<h:commandButton class="boton_formulario1" type="submit"
-									action="#{UsuarioBean.mostrarDatos()}" value="Guardar"></h:commandButton>
+									action="#{UsuarioBean.guardarUsuarioForm()}" value="Guardar"></h:commandButton>
 								<a href="login_form.xhtml"><u>Cancelar e iniciar Sesion</u></a>
 							</div>
 						</center>
