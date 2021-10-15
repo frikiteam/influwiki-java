@@ -214,7 +214,16 @@ public class UsuarioBean implements Serializable {
 		return url;
 
 	}
-
+	
+	/**
+	 * Redierecciones al editar perfil
+	 * 
+	 * @return
+	 */
+	public String retornarEdicionPerfil() {
+		String url = "editar_perfil.xhtml";
+		return url;
+	}
 	public boolean isTerminosCondiciones() {
 		return terminosCondiciones;
 	}

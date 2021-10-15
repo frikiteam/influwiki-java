@@ -138,3 +138,12 @@ body .ui-panelgrid .ui-panelgrid-cell {
 .ui-fluid .ui-inputtext {
 	width: 90%;
 }
+
+@media(max-width: 640px){
+#formulario {
+	width: 100%;
+}
+.ui-fluid .ui-inputtext {
+	width: 100%;
+}
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8"></meta>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+	<title>Formulario de registro</title>
+	<link rel="stylesheet" href="../css/user_form.css"></link>
+</h:head>
+<h:body>
+
+
+	<header>
+	<center>
+		<a href="../index.xhtml" title="ir a la pagina principal "> <img
+			src="../img/Influwiki_Logo.png" alt="otra"></img>
+		</a>
+	</center>
+	</header>
+
+	<div class="divFormulario">
+		<center>
+			<div id="formulario" class="formulario">
+				<h:form>
+
+					<h1>Formulario de Edicion del Perfil</h1>
+
+					
+
+					<p:panelGrid columns="3"
+						columnClasses="ui-grid-col-4, ui-grid-col-4, ui-grid-col-4 " layout="grid"
+						styleClass="ui-panelgrid-blank ui-fluid p-mb-3"
+						style="border:0px none; background-color:transparent;">
+
+						<p:outputLabel class="diseno_label1" for="nombres" value="Nombres" />
+						<h:outputText value="#{UsuarioBean.nombres}" />
+						<p:inputText id="nombres"
+							placeholder="Ingresa tu nombre ej: Fernando" 
+							value="#{UsuarioBean.nombres}">
+							<f:validateLength minimum="4" />
+						</p:inputText>
+						
+
+						<p:outputLabel for="apellidos" value="Apellidos" />
+						<h:outputText value="#{UsuarioBean.apellidos}" />
+						<p:inputText id="apellidos"
+							placeholder="Ingresa tu apellido ej: Herrera" 
+							value="#{UsuarioBean.apellidos}">
+							<f:validateLength minimum="4" />
+						</p:inputText>
+						
+
+						<p:outputLabel for="apodo" value="Apodo / Nick" />
+						<h:outputText value="#{UsuarioBean.apodo}" />
+						<p:inputText id="apodo" placeholder="Ingresa tu nick: FHerrera"
+							 value="#{UsuarioBean.apodo}">
+							<f:validateLength minimum="4" />
+						</p:inputText>
+						
+
+						<p:outputLabel for="correo" value="Correo electronico" />
+						<h:outputText value="#{UsuarioBean.correo}" />
+						<p:inputText id="correo"
+							placeholder="Ej: fernando.herrera@tuempresa.com" 
+							value="#{UsuarioBean.correo}">
+							<f:validateLength minimum="4" />
+						</p:inputText>
+						
+
+						<p:outputLabel for="contrasena" value="Contraseña" />
+						<h:outputText value="#{UsuarioBean.contrasena}" />
+						<p:password id="contrasena" placeholder="Digita la contraseña"
+							 styleClass="ui-fluid ui-inputtext"
+							value="#{UsuarioBean.contrasena}">
+							<f:validateLength minimum="4" />
+						</p:password>
+						
+
+						<p:outputLabel for="genero" value="Genero: " />
+						<h:outputText value="#{UsuarioBean.genero}" />
+						<p:selectOneRadio id="genero" layout="grid" columns="1"
+							value="#{UsuarioBean.genero}" unselectable="true" >
+							<f:selectItem itemLabel="Femenino" itemValue="Femenino" />
+							<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+							<f:selectItem itemLabel="Otro" itemValue="Otro" />
+						</p:selectOneRadio>
+						
+
+						<p:outputLabel for="perfil" value="Perfil:" />
+						<h:outputText value="#{UsuarioBean.id_perfil}" />
+						<p:selectBooleanCheckbox id="perfil"
+							value="#{UsuarioBean.id_perfil}" itemLabel="Influwiki"
+							disabled="true" />
+						
+
+						<p:outputLabel for="idarea" value="Temática: " />
+						<h:outputText value="#{UsuarioBean.id_area}" />
+						<h:selectOneMenu id="idarea" value="#{UsuarioBean.id_area}"
+							>
+							<f:selectItem itemLabel="Seleccione..." itemValue="" />
+							<f:selectItem itemLabel="Programación" itemValue="1" />
+							<f:selectItem itemLabel="Diseño" itemValue="2" />
+							<f:selectItem itemLabel="Otro" itemValue="3" />
+						</h:selectOneMenu>
+						
+
+						<p:outputLabel for="descripcion" value="Descripción General" />
+						<h:outputText value="#{UsuarioBean.contenido}" />
+						<p:inputTextarea id="descripcion" rows="4" 
+							value="#{UsuarioBean.contenido}">
+							<f:validateLength minimum="20" />
+						</p:inputTextarea>
+																		
+					</p:panelGrid>
+					<p:row>
+						<center>
+
+							<div class="botones_formulario">
+								
+								<h:commandButton class="boton_formulario1" type="submit"
+									action="#{UsuarioBean.retornarEdicionPerfil()}" value="Guardar y Visualizar"></h:commandButton>
+								<h:commandButton class="boton_formulario1" type="submit"
+									action="#{UsuarioBean.retornarEdicionPerfil()}" value="Descartar cambios "></h:commandButton>
+									
+							</div>
+						</center>
+
+					</p:row>
+					
+				</h:form>
+			</div>
+		</center>
+	</div>
+</h:body>
+</html>

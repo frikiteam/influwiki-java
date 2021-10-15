@@ -12,24 +12,21 @@
 	<link rel="stylesheet" href="../css/perfil.css"></link>
 	<title>Layout de Sitio Web con CSS GRID</title>
 </h:head>
-<h:body>
+<h:body id="Hbody">
 	<div class="contenedor">
-		<header class="header">
-		<a class="boton" href="perfil_form.xhtml" >Visualizar</a> 
-		<a href="../index.xhtml" title="ir a la pagina principal " target="blank"> 
-		<!-- crear logo de pagina, y si no carga el nombre con alt sale el nombre de la empresa-->
+		<header class="header"> <a class="boton"
+			href="editar_user_form.xhtml">Editar</a> <a href="../index.xhtml"
+			title="ir a la página principal "> <!-- crear logo de pagina, y si no carga el nombre con alt sale el nombre de la empresa-->
 			<img class="logo" src="../img/Influwiki_Logo.png" alt="otra"></img>
-		</a> </header>
+		</a> 
+		</header>
 		<main class="contenido">
 		<div class="content">
 			<div class="content__img">
-				<img src="../img/foto_perfil.jpg" alt="Foto de Perfil"></img>				
-				<h:commandButton type="button"	class="btn brColor btn-user  btn-block mt-4" value="Editar"></h:commandButton>
+				<img src="../img/foto_perfil.jpg" alt="Foto de Perfil" style="height: 13em; width: 21em"></img>
 			</div>
-
 			<div class="content__title">
-				<h1>Perfil del Influwiky</h1>
-				<h:commandButton type="button"	class="btn brColor btn-user  btn-block mt-4" value="Editar"></h:commandButton>
+				<h1>Perfil del Influwiki</h1>
 			</div>
 		</div>
 		<p>Maecenas pharetra pretium quam ut posuere. Quisque luctus sem
@@ -42,24 +39,21 @@
 			et magnis dis parturient montes, nascetur ridiculus mus. Nulla
 			maximus a dolor non condimentum. Suspendisse convallis ullamcorper
 			justo.</p>
-		<h:commandButton type="button"	class="btn brColor btn-user  btn-block mt-4" value="Editar"></h:commandButton>
 		<h3>Lenguajes:</h3>
 		<div class="img__lenguajes">
-			<img src="../img/Java-logo.png" alt="Logo Java"></img>
-			<img src="../img/Js-logo.png" alt="Logo JavaScript"></img>
-			<h:commandButton type="button"	class="btn brColor btn-user  btn-block mt-4" value="Editar"></h:commandButton>
+			<img src="../img/Java-logo.png" alt="Logo Java"></img> <img
+				src="../img/Js-logo.png" alt="Logo JavaScript"></img>
 		</div>
+
 		</main>
 		<aside class="sidebar">
 		<div class="up">
-			<i class="fab fa-facebook font-weight-bold">&nbsp;@Carandev</i> 
-			<i class="fab fa-instagram-square font-weight-bold">&nbsp;@Carandev</i>
+			<i class="fab fa-facebook font-weight-bold">&nbsp;@Carandev</i> <i
+				class="fab fa-instagram-square font-weight-bold">&nbsp;@Carandev</i>
 			<i class="fab fa-twitter font-weight-bold">&nbsp;@Carandev</i>
-			<h:commandButton type="button"	class="btn brColor btn-user  btn-block mt-4" value="Editar"></h:commandButton>
 		</div>
 		<div class="down">
 			<h3>Cursos Destacados</h3>
-			<h:commandButton type="button"	class="btn brColor btn-user  btn-block mt-4" value="Editar"></h:commandButton>
 		</div>
 		</aside>
 	</div>
