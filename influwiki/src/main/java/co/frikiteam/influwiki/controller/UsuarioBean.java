@@ -12,7 +12,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import co.frikiteam.influwiki.Dao.AreaDao;
 import co.frikiteam.influwiki.Dao.UsuarioDao;
+import co.frikiteam.influwiki.model.AreaModel;
 import co.frikiteam.influwiki.model.Usuario;
 
 /**
@@ -323,6 +325,7 @@ public class UsuarioBean implements Serializable {
 			  }
 			 
 			 ConsultarUsariosInfluwiki();
+			 ConsultarAreasInfluwiki();
 			 
 		return Url;
 
@@ -343,11 +346,26 @@ public class UsuarioBean implements Serializable {
 			prueba = listaCompleta.get(i);
 		}
 		
+		return "hola";
+	}
+	
+	
+	public String ConsultarAreasInfluwiki() {
+		AreaModel areasInfluwiki;
+		int tamanioArray;
+		AreaDao areas = new AreaDao();
 		
+		ArrayList<AreaModel>listaCompletaAreas =  areas.getAreasInfluwiki();
 		
+		for (int i = 0; i < listaCompletaAreas.size(); i++) {
+			System.out.println(listaCompletaAreas.get(i).getNombreArea());
+		}
 		
+		System.out.println("Prueba de Carga de áreas");
 		
 		return "hola";
 	}
+	
+	
 	 
 }

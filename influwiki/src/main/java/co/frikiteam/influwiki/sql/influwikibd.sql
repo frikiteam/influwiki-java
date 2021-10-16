@@ -49,7 +49,7 @@ INSERT INTO `perfil_usuario` (`id`, `tipo_perfil`, `observacion`) VALUES
 CREATE TABLE `tipo_area` (
   `id` int(11) NOT NULL,
   `nombre_area` varchar(100) NOT NULL,
-  `observación` varchar(200) NOT NULL
+  `observacion` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
