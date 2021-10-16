@@ -25,7 +25,7 @@ public class UsuarioDao {
 			conexionBD = conBD.obetenerConexion();
 		}
 
-		// prpStmt se encarga de definir unaconsulta y ejecutarla
+		// prpStmt se encarga de definir una consulta y ejecutarla
 
 		PreparedStatement prpStmt = null;
 

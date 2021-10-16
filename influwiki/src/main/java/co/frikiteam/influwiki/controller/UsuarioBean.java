@@ -341,9 +341,8 @@ public class UsuarioBean implements Serializable {
 		for (int i = 0; i < listaCompleta.size(); i++) {
 			System.out.println(listaCompleta.get(i));
 			prueba = listaCompleta.get(i);
-			if(prueba.)
-	
 		}
+		
 		
 		
 		
