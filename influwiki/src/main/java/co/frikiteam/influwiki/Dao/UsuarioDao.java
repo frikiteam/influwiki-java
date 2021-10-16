@@ -88,28 +88,34 @@ public class UsuarioDao {
 		Usuario usuarioInfluwili;
 		
 		try {
-			//Consulta sql donde se traen todos los resgistros de la tabla Usuarios
-			String strStm = null;
-			conectBD = ConexionPrincipalBD.obetenerConexion();
-			strStm = "SELECT id,nombres, apellidos, genero, apodo, email, contrasena, id_perfil, contenido_principal, fecha_registro, actulizado, id_area, "
-					+ "FROM usuarios ";
-			//
-			rstUsuario = prpStmt.getGeneratedKeys();
+			String strStm;
 			
+			//Consulta sql donde se traen todos los resgistros de la tabla Usuarios
+			
+			conectBD = conBD.obetenerConexion();
+			
+			strStm = "SELECT "
+					+ "u.id, u.nombres, u.apellidos, u.genero, u.apodo, u.email, u.contrasena, u.id_perfil, "
+					+ "u.contenido_principal, u.fecha_registro, u.actulizado, u.id_area "
+					+ "FROM usuarios u ";
+			//
+			prpStmt = conectBD.prepareStatement(strStm);
+			rstUsuario = prpStmt.executeQuery();
+
 			while(rstUsuario.next()) {
 				usuarioInfluwili = new Usuario();
 				usuarioInfluwili.setId(Integer.parseInt(rstUsuario.getString("id")));
-				usuarioInfluwili.setNombres(rstUsuario.getNString("nombres"));
-				usuarioInfluwili.setApellidos(rstUsuario.getNString("apellidos"));
-				usuarioInfluwili.setGenero(rstUsuario.getNString("genero"));
-				usuarioInfluwili.setApodo(rstUsuario.getNString("apodo"));
-				usuarioInfluwili.setCorreo(rstUsuario.getNString("email"));
-				usuarioInfluwili.setContrasena(rstUsuario.getNString("contrasena"));
-				usuarioInfluwili.setId_perfil(Integer.parseInt(rstUsuario.getNString("id_perfil")));
-				usuarioInfluwili.setContenido(rstUsuario.getNString("contenido_principal"));
-				usuarioInfluwili.setFecha_registro(rstUsuario.getNString("fecha_registro"));
-				usuarioInfluwili.setActulizado(rstUsuario.getNString("actualizado"));
-				usuarioInfluwili.setId_area(Integer.parseInt(rstUsuario.getNString("id_area")));
+				usuarioInfluwili.setNombres(rstUsuario.getString("nombres"));
+				usuarioInfluwili.setApellidos(rstUsuario.getString("apellidos"));
+				usuarioInfluwili.setGenero(rstUsuario.getString("genero"));
+				usuarioInfluwili.setApodo(rstUsuario.getString("apodo"));
+				usuarioInfluwili.setCorreo(rstUsuario.getString("email"));
+				usuarioInfluwili.setContrasena(rstUsuario.getString("contrasena"));
+				usuarioInfluwili.setId_perfil(Integer.parseInt(rstUsuario.getString("id_perfil")));
+				usuarioInfluwili.setContenido(rstUsuario.getString("contenido_principal"));
+				usuarioInfluwili.setFecha_registro(rstUsuario.getString("fecha_registro"));
+				usuarioInfluwili.setActulizado(rstUsuario.getString("actulizado"));
+				usuarioInfluwili.setId_area(Integer.parseInt(rstUsuario.getString("id_area")));
 				
 				listaUsuarios.add(usuarioInfluwili);
 				

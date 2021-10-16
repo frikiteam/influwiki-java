@@ -322,23 +322,33 @@ public class UsuarioBean implements Serializable {
 			 
 			  }
 			 
-			 //ConsultarUsariosInfluwiki();//
+			 ConsultarUsariosInfluwiki();
 			 
 		return Url;
 
 	}
 	
-	/*
-	public void ConsultarUsariosInfluwiki() {
+	
+	public String ConsultarUsariosInfluwiki() {
+		Usuario prueba;
 		int tamanioArray;
+		String imgHombre = "src/img/logoHombre.png";
+		String imgMujer = "src/img/logoMujer.png";
 		UsuarioDao usuarios = new UsuarioDao();
 		
 		ArrayList<Usuario>listaCompleta =  usuarios.getInflusuarios();
 		
-
-		System.out.println(listaCompleta);
+		for (int i = 0; i < listaCompleta.size(); i++) {
+			System.out.println(listaCompleta.get(i));
+			prueba = listaCompleta.get(i);
+			if(prueba.)
+	
+		}
 		
 		
+		
+		
+		return "hola";
 	}
-	 */
+	 
 }
