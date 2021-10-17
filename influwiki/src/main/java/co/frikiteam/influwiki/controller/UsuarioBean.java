@@ -324,15 +324,15 @@ public class UsuarioBean implements Serializable {
 			 
 			  }
 			 
-			 ConsultarUsariosInfluwiki();
-			 ConsultarAreasInfluwiki();
+			 consultarUsariosInfluwiki();
+			 consultarAreasInfluwiki();
 			 
 		return Url;
 
 	}
 	
 	
-	public String ConsultarUsariosInfluwiki() {
+	public String consultarUsariosInfluwiki() {
 		Usuario prueba;
 		int tamanioArray;
 		String imgHombre = "src/img/logoHombre.png";
@@ -350,7 +350,7 @@ public class UsuarioBean implements Serializable {
 	}
 	
 	
-	public String ConsultarAreasInfluwiki() {
+	public String consultarAreasInfluwiki() {
 		AreaModel areasInfluwiki;
 		int tamanioArray;
 		AreaDao areas = new AreaDao();
@@ -366,6 +366,17 @@ public class UsuarioBean implements Serializable {
 		return "hola";
 	}
 	
+	public String validarLogin() {
+		String Url = "editar_perfil.xhtml";
+						
+		UsuarioDao usuarioLogin = new UsuarioDao();
+		Usuario usuarioBD;
+		usuarioBD = usuarioLogin.getInflusuario(correo, contrasena);
+		System.out.println(usuarioBD);
+				
+		return Url;
+		
+	}
 	
 	 
 }
