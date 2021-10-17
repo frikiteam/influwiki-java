@@ -27,7 +27,7 @@ public class ConexionPrincipalBD {
 	public static Connection obetenerConexion() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://127.0.0.1:3306/influwikidb?serverTimezone=" + TimeZone.getDefault().getID();
+			String url = "jdbc:mysql://127.0.0.1:3306/influwikibd?serverTimezone=" + TimeZone.getDefault().getID();
 			conexion = DriverManager.getConnection(url, "root", ""); // Producción Maria123-
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,

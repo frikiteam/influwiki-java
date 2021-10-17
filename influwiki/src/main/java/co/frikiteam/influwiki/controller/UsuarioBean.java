@@ -368,13 +368,20 @@ public class UsuarioBean implements Serializable {
 	
 	public String validarLogin() {
 		String Url = "editar_perfil.xhtml";
+		String Url2 = "user_form.xhtml";
 						
 		UsuarioDao usuarioLogin = new UsuarioDao();
 		Usuario usuarioBD;
 		usuarioBD = usuarioLogin.getInflusuario(correo, contrasena);
 		System.out.println(usuarioBD);
 				
-		return Url;
+		if(usuarioBD != null) {
+			return Url;
+		}else {
+			return Url2;
+		}
+		
+		
 		
 	}
 	
