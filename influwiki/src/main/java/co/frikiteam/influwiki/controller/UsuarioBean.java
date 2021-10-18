@@ -304,7 +304,7 @@ public class UsuarioBean implements Serializable {
 	/**
 	 * Metodo que guarda la información en base de datos
 	 */
-	public String guardarUsuarioForm() {
+	public void  guardarUsuarioForm() {
 		boolean conexionExitosa;
 		String Url = "login_form.xhtm";
 
@@ -345,16 +345,28 @@ public class UsuarioBean implements Serializable {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage("Se esta validando el " + "Registro para " + nombres));
 
+		
+			try {
+
+				FacesContext contex = FacesContext.getCurrentInstance();
+				contex.getExternalContext().redirect(Url);
+
+			} catch (Exception e) {
+
+				JOptionPane.showMessageDialog(null, "Se ha presentado un error" + e);
+			}
 		}
+		
+		
 
-		try {
-			Thread.sleep(4 * 1000);
-		} catch (Exception e) {
-			System.out.println(e);
+//		try {
+//			Thread.sleep(4 * 1000);
+//		} catch (Exception e) {
+//			System.out.println(e);
+//
+//		}
 
-		}
-
-		return Url;
+		
 
 	}
 
