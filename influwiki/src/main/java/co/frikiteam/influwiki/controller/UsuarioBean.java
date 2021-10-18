@@ -333,17 +333,17 @@ public class UsuarioBean implements Serializable {
 		usuario.setFecha_registro(fecha_registro);
 		usuario.setActulizado(actulizado);
 
-		System.out.println(usuario);
+		
 
 		// Ejecuación de inserción de datos en bd
-		// conexionExitosa = usuarioDao.almacenarUsuario(usuario);
+		conexionExitosa = usuarioDao.almacenarUsuario(usuario);
 		conexionExitosa = true;
 
 		// se detiene 4 segundos antes de seguir
 
 		if (conexionExitosa) {
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Se esta validando el " + "Resgistro para " + nombres));
+					new FacesMessage("Se esta validando el " + "Registro para " + nombres));
 
 		}
 
@@ -399,8 +399,6 @@ public class UsuarioBean implements Serializable {
 			System.out.println(listaCompletaAreas.get(i).getNombreArea());
 		}
 
-		System.out.println("Prueba de Carga de áreas");
-
 	}
 
 	/**
@@ -414,7 +412,6 @@ public class UsuarioBean implements Serializable {
 		UsuarioDao usuarioLogin = new UsuarioDao();
 		Usuario usuarioBD;
 		usuarioBD = usuarioLogin.getInflusuario(correo, contrasena);
-		System.out.println(usuarioBD);
 
 		if (usuarioBD.getNombres() != null) {
 
@@ -427,8 +424,6 @@ public class UsuarioBean implements Serializable {
 			this.setId_area(usuarioBD.getId_area());
 			this.setContenido(usuarioBD.getContenido());
 			this.setUrlImgPerfil(asignarFotoPerfil(usuarioBD));
-
-			System.out.println(usuarioBD.getGenero());
 
 			// redireccione a la pagina editar_perfil.xhtml en caso de de que exista login y
 			// contraseña
@@ -470,8 +465,6 @@ public class UsuarioBean implements Serializable {
 		String urlImagenHombre = "img/foto_perfil_h.png";
 		String urlImagenMujer = "img/foto_perfil.jpg";
 		String imgDefault = "img/infliwiki_buho.png";
-
-		System.out.println(generoUsuario);
 
 		if (generoUsuario.getGenero().equals(generoMasculino)) {
 			return urlImagenHombre;
