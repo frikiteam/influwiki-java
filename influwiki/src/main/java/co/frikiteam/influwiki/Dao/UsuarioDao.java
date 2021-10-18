@@ -78,31 +78,30 @@ public class UsuarioDao {
 
 	/**
 	 * Metodo que retorna la lista de usuarios influwiki
+	 * 
 	 * @return
 	 */
 	public ArrayList<Usuario> getInflusuarios() {
 		Connection conectBD = null;
 		PreparedStatement prpStmt = null;
 		ResultSet rstUsuario = null;
-		ArrayList <Usuario>listaUsuarios = new ArrayList<Usuario>();
+		ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
 		Usuario usuarioInfluwili;
-		
+
 		try {
 			String strStm;
-			
-			//Consulta sql donde se traen todos los resgistros de la tabla Usuarios
-			
+
+			// Consulta sql donde se traen todos los resgistros de la tabla Usuarios
+
 			conectBD = conBD.obetenerConexion();
-			
-			strStm = "SELECT "
-					+ "u.id, u.nombres, u.apellidos, u.genero, u.apodo, u.email, u.contrasena, u.id_perfil, "
-					+ "u.contenido_principal, u.fecha_registro, u.actulizado, u.id_area "
-					+ "FROM usuarios u ";
+
+			strStm = "SELECT " + "u.id, u.nombres, u.apellidos, u.genero, u.apodo, u.email, u.contrasena, u.id_perfil, "
+					+ "u.contenido_principal, u.fecha_registro, u.actulizado, u.id_area " + "FROM usuarios u ";
 			//
 			prpStmt = conectBD.prepareStatement(strStm);
 			rstUsuario = prpStmt.executeQuery();
 
-			while(rstUsuario.next()) {
+			while (rstUsuario.next()) {
 				usuarioInfluwili = new Usuario();
 				usuarioInfluwili.setId(Integer.parseInt(rstUsuario.getString("id")));
 				usuarioInfluwili.setNombres(rstUsuario.getString("nombres"));
@@ -116,15 +115,13 @@ public class UsuarioDao {
 				usuarioInfluwili.setFecha_registro(rstUsuario.getString("fecha_registro"));
 				usuarioInfluwili.setActulizado(rstUsuario.getString("actulizado"));
 				usuarioInfluwili.setId_area(Integer.parseInt(rstUsuario.getString("id_area")));
-				
+
 				listaUsuarios.add(usuarioInfluwili);
-				
+
 			}
 			rstUsuario.close();
-			
-			
-						
-		}catch (Exception e) {
+
+		} catch (Exception e) {
 			System.out.println("Se presento un error al reallizar la consulta a la BD " + e);
 		}
 		return listaUsuarios;
@@ -132,59 +129,56 @@ public class UsuarioDao {
 
 	/**
 	 * Metodo que retorna la validacion de login
+	 * 
 	 * @return
 	 */
-	public Usuario getInflusuario(String correo,String contrasena) {
+	public Usuario getInflusuario(String correo, String contrasena) {
 		Connection conectBD = null;
 		PreparedStatement prpStmt = null;
 		ResultSet rstUsuario = null;
 		Usuario usuarioInfluwiki = new Usuario();
-		
+
 		try {
 			String strStm;
-			
-			//Consulta sql donde se traen todos los resgistros de la tabla Usuarios
-			
+
+			// Consulta sql donde se traen todos los resgistros de la tabla Usuarios
+
 			conectBD = conBD.obetenerConexion();
-			
-			strStm = "SELECT "
-					+ "u.id, u.nombres, u.apellidos, u.genero, u.apodo, u.email, u.contrasena, u.id_perfil, "
+
+			strStm = "SELECT u.id, u.nombres, u.apellidos, u.genero, u.apodo, u.email, u.contrasena, u.id_perfil,"
 					+ "u.contenido_principal, u.fecha_registro, u.actulizado, u.id_area "
-					+ "FROM usuarios u"
-					+ "WHERE u.email = ?"
-					+ "AND u.contrasena = ?";
+					+ " FROM usuarios u"
+					+ " WHERE u.email =? AND u.contrasena=?";
 			//
+			prpStmt = conectBD.prepareStatement(strStm);
+			
 			prpStmt.setString(1, correo);
 			prpStmt.setString(2, contrasena);
+
 			
-			prpStmt = conectBD.prepareStatement(strStm);
 			rstUsuario = prpStmt.executeQuery();
 
-			while(rstUsuario.next()) {
-				usuarioInfluwiki = new Usuario();
-				usuarioInfluwiki.setId(Integer.parseInt(rstUsuario.getString("id")));
-				usuarioInfluwiki.setNombres(rstUsuario.getString("nombres"));
-				usuarioInfluwiki.setApellidos(rstUsuario.getString("apellidos"));
-				usuarioInfluwiki.setGenero(rstUsuario.getString("genero"));
-				usuarioInfluwiki.setApodo(rstUsuario.getString("apodo"));
-				usuarioInfluwiki.setCorreo(rstUsuario.getString("email"));
-				usuarioInfluwiki.setContrasena(rstUsuario.getString("contrasena"));
-				usuarioInfluwiki.setId_perfil(Integer.parseInt(rstUsuario.getString("id_perfil")));
-				usuarioInfluwiki.setContenido(rstUsuario.getString("contenido_principal"));
-				usuarioInfluwiki.setFecha_registro(rstUsuario.getString("fecha_registro"));
-				usuarioInfluwiki.setActulizado(rstUsuario.getString("actulizado"));
-				usuarioInfluwiki.setId_area(Integer.parseInt(rstUsuario.getString("id_area")));
-				
-								
-			}
+			rstUsuario.next();
+			usuarioInfluwiki.setId(Integer.parseInt(rstUsuario.getString("id")));
+			usuarioInfluwiki.setNombres(rstUsuario.getString("nombres"));
+			usuarioInfluwiki.setApellidos(rstUsuario.getString("apellidos"));
+			usuarioInfluwiki.setGenero(rstUsuario.getString("genero"));
+			usuarioInfluwiki.setApodo(rstUsuario.getString("apodo"));
+			usuarioInfluwiki.setCorreo(rstUsuario.getString("email"));
+			usuarioInfluwiki.setContrasena(rstUsuario.getString("contrasena"));
+			usuarioInfluwiki.setId_perfil(Integer.parseInt(rstUsuario.getString("id_perfil")));
+			usuarioInfluwiki.setContenido(rstUsuario.getString("contenido_principal"));
+			usuarioInfluwiki.setFecha_registro(rstUsuario.getString("fecha_registro"));
+			usuarioInfluwiki.setActulizado(rstUsuario.getString("actulizado"));
+			usuarioInfluwiki.setId_area(Integer.parseInt(rstUsuario.getString("id_area")));
+			
+			System.out.println("Hola esto es una consulta de datos");
 			rstUsuario.close();
-			
-			
-						
-		}catch (Exception e) {
+
+		} catch (Exception e) {
 			System.out.println("Se presento un error al reallizar la consulta a la BD " + e);
 		}
 		return usuarioInfluwiki;
 	}
-	
+
 }

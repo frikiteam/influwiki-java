@@ -10,7 +10,14 @@ import java.util.Map;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
+import javax.swing.JOptionPane;
+
+import org.primefaces.PrimeFaces;
+import org.primefaces.component.chip.Chip;
+import org.primefaces.model.DefaultStreamedContent;
 
 import co.frikiteam.influwiki.Dao.AreaDao;
 import co.frikiteam.influwiki.Dao.UsuarioDao;
@@ -31,6 +38,8 @@ public class UsuarioBean implements Serializable {
 	 * Serialización de la Clase
 	 */
 	private static final long serialVersionUID = 1L;
+	UsuarioDao usuariosinfluwiki = new UsuarioDao();
+
 
 	private long id;
 
@@ -60,11 +69,11 @@ public class UsuarioBean implements Serializable {
 
 	private boolean terminosCondiciones;
 
-	// Variable selecionada de forma permamente para pefil influwiki
+	private String urlImgPerfil;
+	
+	private ArrayList<Usuario> listaCompleta;
 
-	public UsuarioBean() {
 
-	}
 
 	/**
 	 * Función encargada de activar el check en id_influwiki
@@ -178,6 +187,32 @@ public class UsuarioBean implements Serializable {
 		this.mensajeSaludo = mensajeSaludo;
 	}
 
+	public String getUrlImgPerfil() {
+		return urlImgPerfil;
+	}
+
+	public void setUrlImgPerfil(String urlImgPerfil) {
+		this.urlImgPerfil = urlImgPerfil;
+	}
+	
+	public boolean isTerminosCondiciones() {
+		return terminosCondiciones;
+	}
+
+	public void setTerminosCondiciones(boolean terminosCondiciones) {
+		this.terminosCondiciones = terminosCondiciones;
+	}
+	
+	public ArrayList<Usuario> getListaCompleta() {
+		return listaCompleta;
+	}
+
+	public void setListaCompleta(ArrayList<Usuario> listaCompleta) {
+		this.listaCompleta = listaCompleta;
+		
+	}
+	
+	
 	/*
 	 * Metodos encargados de realixar las distintas validaciones
 	 */
@@ -216,7 +251,7 @@ public class UsuarioBean implements Serializable {
 		return url;
 
 	}
-	
+
 	/**
 	 * Redierecciones al editar perfil
 	 * 
@@ -226,13 +261,8 @@ public class UsuarioBean implements Serializable {
 		String url = "editar_perfil.xhtml";
 		return url;
 	}
-	public boolean isTerminosCondiciones() {
-		return terminosCondiciones;
-	}
 
-	public void setTerminosCondiciones(boolean terminosCondiciones) {
-		this.terminosCondiciones = terminosCondiciones;
-	}
+
 
 	/**
 	 * 
@@ -270,7 +300,6 @@ public class UsuarioBean implements Serializable {
 		}
 		return perfilInfluwiki;
 	}
-	
 
 	/**
 	 * Metodo que guarda la información en base de datos
@@ -307,83 +336,154 @@ public class UsuarioBean implements Serializable {
 		System.out.println(usuario);
 
 		// Ejecuación de inserción de datos en bd
-		//conexionExitosa = usuarioDao.almacenarUsuario(usuario);
+		// conexionExitosa = usuarioDao.almacenarUsuario(usuario);
 		conexionExitosa = true;
-		
 
 		// se detiene 4 segundos antes de seguir
-		
-			if (conexionExitosa) {
-				FacesContext.getCurrentInstance().addMessage(null,
-						new FacesMessage("Se esta validando el " + "Resgistro para " + nombres));
 
-			}
-			
-			
-			  try { Thread.sleep(4 * 1000); } catch (Exception e) { System.out.println(e);
-			 
-			  }
-			 
-			 consultarUsariosInfluwiki();
-			 consultarAreasInfluwiki();
-			 
+		if (conexionExitosa) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage("Se esta validando el " + "Resgistro para " + nombres));
+
+		}
+
+		try {
+			Thread.sleep(4 * 1000);
+		} catch (Exception e) {
+			System.out.println(e);
+
+		}
+
 		return Url;
 
 	}
-	
-	
-	public String consultarUsariosInfluwiki() {
-		Usuario prueba;
-		int tamanioArray;
-		String imgHombre = "src/img/logoHombre.png";
-		String imgMujer = "src/img/logoMujer.png";
+
+	/**
+	 * Trae la listas de todos los usuarios
+	 * 
+	 * @return
+	 */
+
+	public ArrayList<Usuario> consultarUsariosInfluwiki() {
+
 		UsuarioDao usuarios = new UsuarioDao();
 		
 		ArrayList<Usuario>listaCompleta =  usuarios.getInflusuarios();
 		
-		for (int i = 0; i < listaCompleta.size(); i++) {
-			System.out.println(listaCompleta.get(i));
-			prueba = listaCompleta.get(i);
-		}
-		
-		return "hola";
+		/*
+		 * for (int i = 0; i < listaCompleta.size(); i++) {
+		 * System.out.println(listaCompleta.get(i)); prueba = listaCompleta.get(i); }
+		 */
+			
+		return listaCompleta;
 	}
+
+
+
+
 	
-	
-	public String consultarAreasInfluwiki() {
+
+	/**
+	 * Trae las areas existentes en influwikibd
+	 * 
+	 * @return
+	 */
+	public void consultarAreasInfluwiki() {
 		AreaModel areasInfluwiki;
 		int tamanioArray;
 		AreaDao areas = new AreaDao();
-		
-		ArrayList<AreaModel>listaCompletaAreas =  areas.getAreasInfluwiki();
-		
+
+		ArrayList<AreaModel> listaCompletaAreas = areas.getAreasInfluwiki();
+
 		for (int i = 0; i < listaCompletaAreas.size(); i++) {
 			System.out.println(listaCompletaAreas.get(i).getNombreArea());
 		}
-		
+
 		System.out.println("Prueba de Carga de áreas");
-		
-		return "hola";
+
 	}
-	
-	public String validarLogin() {
-		String Url = "editar_perfil.xhtml";
-		String Url2 = "user_form.xhtml";
-						
+
+	/**
+	 * Valida si los datos ingresados existen en la base datos
+	 */
+	public void validarLogin() {
+
+		String Url2 = "login_form.xhtml";
+
+
 		UsuarioDao usuarioLogin = new UsuarioDao();
 		Usuario usuarioBD;
 		usuarioBD = usuarioLogin.getInflusuario(correo, contrasena);
 		System.out.println(usuarioBD);
-				
-		if(usuarioBD != null) {
-			return Url;
-		}else {
-			return Url2;
+
+		if (usuarioBD.getNombres() != null) {
+
+			this.setNombres(usuarioBD.getNombres());
+			this.setApellidos(usuarioBD.getApellidos());
+			this.setApodo(usuarioBD.getApodo());
+			this.setCorreo(usuarioBD.getCorreo());
+			this.setContrasena(usuarioBD.getContrasena());
+			this.setGenero(usuarioBD.getGenero());
+			this.setId_area(usuarioBD.getId_area());
+			this.setContenido(usuarioBD.getContenido());
+			this.setUrlImgPerfil(asignarFotoPerfil(usuarioBD));
+
+			System.out.println(usuarioBD.getGenero());
+
+			// redireccione a la pagina editar_perfil.xhtml en caso de de que exista login y
+			// contraseña
+			try {
+
+				FacesContext contex = FacesContext.getCurrentInstance();
+				contex.getExternalContext().redirect("editar_perfil.xhtml");
+
+			} catch (Exception e) {
+
+				JOptionPane.showMessageDialog(null, "Se ha presentado un error" + e);
+			}
+
+		} else {
+
+			try {
+				FacesContext contex = FacesContext.getCurrentInstance();
+				contex.getExternalContext().redirect(Url2);
+			} catch (Exception e) {
+
+				JOptionPane.showMessageDialog(null, "Se ha presentado un error" + e);
+			}
+
 		}
-		
-		
-		
+
 	}
-	
-	 
+
+	/**
+	 * Asigna la imagen de perfil si es hombre o mujer
+	 * 
+	 * @param usuario
+	 * @return
+	 */
+	public String asignarFotoPerfil(Usuario generoUsuario) {
+
+		String generoMasculino = "Masculino";
+		String generoFemenino = "Femenino";
+
+		String urlImagenHombre = "img/foto_perfil_h.png";
+		String urlImagenMujer = "img/foto_perfil.jpg";
+		String imgDefault = "img/infliwiki_buho.png";
+
+		System.out.println(generoUsuario);
+
+		if (generoUsuario.getGenero().equals(generoMasculino)) {
+			return urlImagenHombre;
+
+		} else if (generoUsuario.getGenero().equals(generoFemenino)) {
+			return urlImagenMujer;
+		} else {
+			return imgDefault;
+		}
+
+	}
+
+
+
 }

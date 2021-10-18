@@ -23,33 +23,33 @@
 	<br></br>
 	<br></br>
 	<center>
-		<p:card style="width: 15em" styleClass="img-ui">
 
+		<ui:repeat var="item" varStatus="status" style="margin-top:15px"
+			value="#{UsuarioBean.consultarUsariosInfluwiki()}">
 
+			<p:card style="width: 18em; margin-top:15px" styleClass="img-ui">
 				<f:facet name="header">
+
 					<img alt="user header" src="../img/foto_perfil.jpg"
-						style="height: 18em" />
+						style="height: 18em; border-radius: 50%; opacity: 0.6;" />
 				</f:facet>
 				<f:facet name="title">
-        Nombre del Influencer
+        #{item.nombres}
+        #{item.apellidos}
     </f:facet>
 				<f:facet name="subtitle">
-        Lenguajes
-    </f:facet>
-
+        Area de enfoque
+        <h3>Programación</h3>
+				</f:facet>
 				<f:facet name="footer">
 
 					<h:form>
 						<p:commandButton value="Ver Perfil"
 							action="#{UsuarioBean.verPerfil()}" icon="pi pi-window-maximize" />
 					</h:form>
-
 				</f:facet>
-		</p:card>
-
-		<br></br>
-
+			</p:card>
+		</ui:repeat>
 	</center>
-
 </h:body>
 </html>

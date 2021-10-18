@@ -10,7 +10,7 @@
 	<script src="https://kit.fontawesome.com/f3179b291a.js"
 		crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="../css/perfil.css"></link>
-	<title>Layout de Sitio Web con CSS GRID</title>
+	<title>Vista Perfil</title>
 </h:head>
 <h:body id="Hbody">
 	<div class="contenedor">
@@ -18,27 +18,39 @@
 			href="editar_user_form.xhtml">Editar</a> <a href="../index.xhtml"
 			title="ir a la página principal "> <!-- crear logo de pagina, y si no carga el nombre con alt sale el nombre de la empresa-->
 			<img class="logo" src="../img/Influwiki_Logo.png" alt="otra"></img>
-		</a> 
-		</header>
+		</a> </header>
 		<main class="contenido">
+
 		<div class="content">
 			<div class="content__img">
-				<img src="../img/foto_perfil.jpg" alt="Foto de Perfil" style="height: 13em; width: 21em"></img>
+
+				<p:graphicImage name="#{UsuarioBean.urlImgPerfil}"
+					style="max-width: 200px;">
+
+				</p:graphicImage>
+
+<!-- 				<img src="../img/foto_perfil.jpg" alt="Foto de Perfil" -->
+<!-- 					style="height: 13em; width: 21em"></img> -->
 			</div>
 			<div class="content__title">
-				<h1>Perfil del Influwiki</h1>
+				<h3>Perfil del Influwiki</h3>
+				<br />
+
 			</div>
+
+			<div>
+				<h1>
+					<h:outputText value="#{UsuarioBean.nombres}">
+					</h:outputText>
+				</h1>
+			</div>
+
 		</div>
-		<p>Maecenas pharetra pretium quam ut posuere. Quisque luctus sem
-			purus. Phasellus vel nibh sed erat interdum placerat eget a dui.
-			Vivamus viverra pharetra congue. Sed pretium mi eu dui congue
-			pulvinar. Donec felis risus, malesuada quis tristique faucibus,
-			vestibulum non urna. Fusce nec orci pulvinar, blandit velit quis,
-			finibus neque. Mauris malesuada metus eget ornare pellentesque. Nunc
-			pharetra ante eget ullamcorper finibus. Orci varius natoque penatibus
-			et magnis dis parturient montes, nascetur ridiculus mus. Nulla
-			maximus a dolor non condimentum. Suspendisse convallis ullamcorper
-			justo.</p>
+
+		<p>
+			<h:outputText value="#{UsuarioBean.contenido}" />
+		</p>
+
 		<h3>Lenguajes:</h3>
 		<div class="img__lenguajes">
 			<img src="../img/Java-logo.png" alt="Logo Java"></img> <img
